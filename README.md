@@ -1,5 +1,5 @@
-# Feedback-App
-## A projet with Ruby on rails and React
+# Feedback App
+## A projet with Ruby on rails and React 
 
 This is my solution to the Feedback app from Front End Mentor. I simplified this challenge and just made the user able to add a task. I focused on learning the basics of Rails.
 
@@ -28,7 +28,7 @@ Your users should be able to:
 
 ### Screenshot
 
-![](./src/assets/preview.jpg)
+![](./assets/preview.jpg)
 
 ## My process
 
