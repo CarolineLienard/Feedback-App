@@ -22,8 +22,8 @@ function AddFeedback() {
       title: title,
       body: body,
       category: category,
-      comments: 0,
-      likes: 0
+      comments: 1,
+      likes: 65
     }
     addFeedback(data).then(res => {console.log(res)})
   }

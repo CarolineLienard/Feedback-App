@@ -28,7 +28,7 @@ Your users should be able to:
 
 ### Screenshot
 
-![](./assets/preview.jpg)
+![](./images/preview.jpg)
 
 ## My process
 
