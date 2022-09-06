@@ -1,6 +1,7 @@
 import Header from './Header'
 import Category from './Category'
 import Roadmap from './Roadmap'
+import NavBar from './NavBar'
 import Feedbacks from './Feedbacks'
 import '../sass/main.scss'
 
@@ -21,13 +22,17 @@ function App() {
   }, [])
 
   return (
-    <main>
-      <div>
+    <main className='flex'>
+      <div className='headerContainer flex flex-col'>
         <Header />
         <Category />
         <Roadmap />
       </div>
-      <Feedbacks feedbacks={feedbacks} />
+
+      <div className='feedbackContainer flex flex-col'>
+        <NavBar />
+        <Feedbacks feedbacks={feedbacks} />
+      </div>
     </main>
   );
 }

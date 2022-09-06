@@ -1,17 +1,36 @@
 import React from "react" 
+import commentIcon from "../assets/icon-comments.svg"
+import chevronUp from "../assets/icon-arrow-up.svg"
 
 function Feedbacks (props) {
     return (
         <div>
-            <h1>This feedbacks are from the API</h1>
             {props.feedbacks.map((feedback)=> {
-                return <div key={feedback.id}>
-                            <h2>{feedback.title}</h2>
-                            <p>{feedback.body}</p>
-                            <p>{feedback.category}</p>
+                return <div key={feedback.id} className="feedback container flex between">
+                    
+                    <div className="flex gap-1">
+                        <div className="upVote flex flex-col">
+                            <div>
+                                <img src={chevronUp} alt="" />
+                            </div>
                             <span>{feedback.likes}</span>
-                            <span>{feedback.comments}</span>
                         </div>
+
+                        <div>
+                            <h3>{feedback.title}</h3>
+                            <p>{feedback.body}</p>
+                            <p className="filter">{feedback.category}</p>
+                        </div>
+                    </div>    
+                    
+                    <div className="comment flex">
+                        <div>
+                            <img src={commentIcon} alt=""/>
+                        </div>
+                        <span>{feedback.comments}</span>
+                    </div>
+
+                </div>
             })}
         </div>
     )

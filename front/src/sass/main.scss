@@ -4,6 +4,10 @@
 @import "./base/normalize";
 @import "./base/base";
 
+@import "./pages/app.scss";
+
 @import "./components/header.scss";
 @import "./components/category.scss";
 @import "./components/roadmap.scss";
+@import "./components/navbar.scss";
+@import "./components/feedback.scss";

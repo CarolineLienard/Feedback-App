@@ -1,8 +1,10 @@
 header {
+    background-image: url(../../assets/suggestions/desktop/background-header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 4rem 1rem 1rem 1rem;
     gap: 0.2rem;
     border-radius: 10px;
-    background: linear-gradient(157deg, rgba(40,167,237,1) 0%, rgba(163,55,246,1) 53%, rgba(232,77,112,1) 88%, rgba(244,159,133,1) 100%);
     h2 {
         color: $light-primary;
     }
