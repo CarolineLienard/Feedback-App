@@ -1,14 +1,9 @@
 import Feedbacks from './Feedbacks'
+import Header from './Header'
 import '../sass/main.scss'
 
-import axios from "axios"
+import { getFeedback } from '../API/feedback'
 import { useEffect, useState } from 'react'
-
-const API_URL = "http://localhost:3000/api/v1/feedbacks"
-
-function getFeedback() {
-  return axios.get(API_URL).then((response) => response.data)
-}
 
 function App() {
   const [feedbacks, setFeedbacks] = useState([])
@@ -24,8 +19,8 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <h1>Hello</h1>
+    <div>
+      <Header />
       <Feedbacks feedbacks={feedbacks} />
     </div>
   );
