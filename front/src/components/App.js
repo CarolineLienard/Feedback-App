@@ -1,5 +1,7 @@
-import Feedbacks from './Feedbacks'
 import Header from './Header'
+import Category from './Category'
+import Roadmap from './Roadmap'
+import Feedbacks from './Feedbacks'
 import '../sass/main.scss'
 
 import { getFeedback } from '../API/feedback'
@@ -19,10 +21,14 @@ function App() {
   }, [])
 
   return (
-    <div>
-      <Header />
+    <main>
+      <div>
+        <Header />
+        <Category />
+        <Roadmap />
+      </div>
       <Feedbacks feedbacks={feedbacks} />
-    </div>
+    </main>
   );
 }
 

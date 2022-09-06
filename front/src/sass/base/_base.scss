@@ -39,8 +39,8 @@ p {
 }
 
 span {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 /* Button */ 
@@ -48,6 +48,7 @@ span {
 button {
     background-color: $accent-primary;
     border-radius: 10px;
+    border: none;
     color: $light-primary;
     padding: 1rem;
 }
@@ -72,6 +73,13 @@ button:hover {
     color: $light-primary;
 }
 
+/* Container */ 
+.container {
+    background-color: $light-primary;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
 /* Flex */ 
 
 .flex {
@@ -82,8 +90,8 @@ button:hover {
     justify-content: center;
 }
 
-.justify-end {
-    justify-content: flex-end;
+.between {
+    justify-content: space-between;
 }
 
 .align-center {
