@@ -4,11 +4,11 @@ import chevronUp from "../assets/icon-arrow-up.svg"
 
 function Feedbacks (props) {
     return (
-        <div>
+        <div className="flex flex-col gap-1-5">
             {props.feedbacks.map((feedback)=> {
-                return <div key={feedback.id} className="feedback container flex between">
+                return <div key={feedback.id} className="feedback container flex align-center between">
                     
-                    <div className="flex gap-1">
+                    <div className="feedback__title flex">
                         <div className="small-container flex flex-col align-center">
                             <div>
                                 <img src={chevronUp} alt="" />
@@ -16,14 +16,14 @@ function Feedbacks (props) {
                             <span>{feedback.likes}</span>
                         </div>
 
-                        <div>
+                        <div className="flex flex-col gap-0-8">
                             <h3>{feedback.title}</h3>
                             <p>{feedback.body}</p>
                             <p className="filter">{feedback.category}</p>
                         </div>
                     </div>    
                     
-                    <div className="flex">
+                    <div className="feedback__comment flex align-center gap-0-5">
                         <div>
                             <img src={commentIcon} alt=""/>
                         </div>

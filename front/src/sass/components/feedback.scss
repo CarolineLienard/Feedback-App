@@ -1,5 +1,12 @@
 .feedback {
-    span {
-        font-size: 13px;
+    padding: 2rem;
+    &__title {
+        gap: 3rem;
+        span {
+            font-size: 13px;
+        }
+    }
+    &__comment {
+        padding-right: 1rem;
     }
 }
