@@ -9,7 +9,7 @@ function Feedbacks (props) {
                 return <div key={feedback.id} className="feedback container flex between">
                     
                     <div className="flex gap-1">
-                        <div className="upVote flex flex-col">
+                        <div className="small-container flex flex-col align-center">
                             <div>
                                 <img src={chevronUp} alt="" />
                             </div>
@@ -23,7 +23,7 @@ function Feedbacks (props) {
                         </div>
                     </div>    
                     
-                    <div className="comment flex">
+                    <div className="flex">
                         <div>
                             <img src={commentIcon} alt=""/>
                         </div>

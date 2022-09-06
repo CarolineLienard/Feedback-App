@@ -2,7 +2,7 @@ import React from 'react'
 
 function Category() {
   return (
-    <div className='category container flex'>
+    <div className='category container flex wrap gap-0-8'>
         <button className='filter'>All</button>
         <button className='filter'>UI</button>
         <button className='filter'>UX</button>

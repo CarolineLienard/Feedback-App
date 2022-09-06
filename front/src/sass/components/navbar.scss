@@ -1,8 +1,15 @@
 .navBar {
     background-color: $dark-primary;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-radius: 10px;
-    span {
-        color: $light-primary;
+    p {
+        font-size: 14px;
+    }
+    p, span, h4 {
+        color: $light-background-secondary;
+
+    }
+    &__suggestion {
+        gap: 3rem;
     }
 }

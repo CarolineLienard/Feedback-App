@@ -1,5 +1,12 @@
 .category {
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    padding: 1.5rem;
+    .filter {
+        &:hover {
+            cursor: pointer;
+            background-color: $hover-third;
+        }
+        &:active {
+            background-color: $medium-primary;
+            color: $light-primary;
+        }
+    }
 }

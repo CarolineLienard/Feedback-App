@@ -5,23 +5,25 @@ import plusIcon from "../assets/icon-plus.svg"
 
 function NavBar() {
   return (
-    <div className='navBar flex align-center between'>
+    <div className='navBar flex align-center gap-1 between'>
       
-      <div className='flex align-center'>
-        <img src={bubbleIcon} alt="" />
-        <span>6 suggestions</span>
-      </div>
-       
-      <div className='flex align-center'>
-        <p>Sort by: </p>
-        <span>Most upvote</span>
-        <img src={chevronDown} alt="" />
-      </div>
+      <div className='navBar__suggestion flex'>
+        <div className='flex align-center gap-0-8'>
+          <img src={bubbleIcon} alt="" />
+          <span>6 Suggestions</span>
+        </div>
         
-      <button>
+        <div className='flex align-center gap-0-5'>
+          <p>Sort by: </p>
+          <h4>Most Upvote</h4>
+          <img src={chevronDown} alt="" />
+        </div>
+      </div>  
+
+      <button className='flex align-center gap-0-5'>
         <img src={plusIcon} alt="" />
-        <span>Add Feeback</span>
-      </button>
+        <h4>Add Feeback</h4>
+      </button>     
       
     </div>
   )
