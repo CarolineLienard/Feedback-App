@@ -1,0 +1,19 @@
+/* Responsive mixins */
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)){
+        @content;
+    }
+}
+
+@mixin small-device-only {
+    @media screen and (max-width: map-get($breakpoints, small-device)){
+        @content;
+    }
+} 
+
+@mixin small-desktop-only {
+    @media screen and (max-width: map-get($breakpoints, small-desktop)){
+        @content;
+    }
+} 

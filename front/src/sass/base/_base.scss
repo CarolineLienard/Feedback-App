@@ -1,3 +1,103 @@
+/* General */
+* {
+    font-family: "Jost";
+    color: $dark-secondary;
+}
+
+body {
+    background-color: $light-background-secondary;
+}
+
+/* Typography */
 h1 {
-    background-color: red;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.33px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Button */ 
+
+button {
+    background-color: $accent-primary;
+    border-radius: 10px;
+    color: $light-primary;
+    padding: 1rem;
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.button-category {
+    background-color: $medium-background-secondary;
+    color: $medium-primary;
+    padding: 0.5rem;
+}
+
+.button-category:hover {
+    background-color: $hover-third;
+}
+
+.button-category:active {
+    background-color: $medium-primary;
+    color: $light-primary;
+}
+
+/* Flex */ 
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.gap1 {
+    gap: 1rem
+}
+
+.gap2 {
+    gap: 2rem;
 }
