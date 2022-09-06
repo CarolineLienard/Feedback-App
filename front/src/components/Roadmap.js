@@ -5,7 +5,7 @@ function Roadmap() {
     <div className='roadmap container flex flex-col gap-1-5'>
         <div className='flex align-center between'>
             <h3>Roadmap</h3>
-            <a href="">View</a>
+            <a className='view-link' href="">View</a>
         </div>
 
         <div className='flex flex-col gap-0-8'>

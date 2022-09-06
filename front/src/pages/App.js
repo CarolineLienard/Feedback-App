@@ -1,8 +1,8 @@
-import Header from './Header'
-import Category from './Category'
-import Roadmap from './Roadmap'
-import NavBar from './NavBar'
-import Feedbacks from './Feedbacks'
+import Header from '../components/Header'
+import Category from '../components/Category'
+import Roadmap from '../components/Roadmap'
+import NavBar from '../components/NavBar'
+import Feedbacks from '../components/Feedbacks'
 import '../sass/main.scss'
 
 import { getFeedback } from '../API/feedback'

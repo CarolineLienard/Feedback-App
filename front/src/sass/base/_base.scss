@@ -46,12 +46,17 @@ p {
 }
 
 a {
+    text-decoration: none;
+}
+
+.view-link {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: -0.2px;
     text-decoration: underline;
     color: $medium-primary;
 }
+
 
 span {
     font-size: 16px;
@@ -60,12 +65,27 @@ span {
 
 /* Button */ 
 
-button {
+.button-purple {
     background-color: $accent-primary;
     border-radius: 10px;
     border: none;
     color: $light-primary;
     padding: 0.8rem 1.8rem;
+    &:hover {
+        filter: brightness(120%);
+        cursor: pointer;
+    }
+}
+
+.filter {
+    background-color: $medium-background-secondary;
+    color: $medium-primary;
+    padding: 0.5rem 1rem;
+    font-size: 13px;
+    font-weight: 600;
+    width: fit-content;
+    border-radius: 10px;
+    border: none;
 }
 
 /* Container */ 
@@ -81,16 +101,6 @@ button {
     padding: 0.3rem 0.8rem;
     margin-bottom: 2.5rem;
     gap: 0.2rem;
-}
-
-.filter {
-    background-color: $medium-background-secondary;
-    color: $medium-primary;
-    padding: 0.5rem 1rem;
-    font-size: 13px;
-    font-weight: 600;
-    width: fit-content;
-    border-radius: 10px;
 }
 
 /* Flex */ 

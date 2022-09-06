@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from "react-router-dom"
+
 import bubbleIcon from "../assets/icon-suggestions.svg"
 import chevronDown from "../assets/icon-arrow-down.svg"
 import plusIcon from "../assets/icon-plus.svg"
 
 function NavBar() {
+
   return (
     <div className='navBar flex align-center gap-1 between'>
       
@@ -20,9 +23,11 @@ function NavBar() {
         </div>
       </div>  
 
-      <button className='flex align-center gap-0-5'>
+      <button className='button-purple flex align-center gap-0-5'>
         <img src={plusIcon} alt="" />
-        <h4>Add Feeback</h4>
+        <Link to={'/addFeedback'}>
+          <h4>Add Feeback</h4>
+        </Link>
       </button>     
       
     </div>
