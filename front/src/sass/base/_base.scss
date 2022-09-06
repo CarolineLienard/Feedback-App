@@ -54,11 +54,6 @@ button {
     padding: 1rem;
 }
 
-button:hover {
-    opacity: 0.8;
-    cursor: pointer;
-}
-
 /* Container */ 
 .container {
     background-color: $light-primary;
@@ -69,7 +64,20 @@ button:hover {
 .filter {
     background-color: $medium-background-secondary;
     color: $medium-primary;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 13px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.filter:hover {
+    cursor: pointer;
+    background-color: $hover-third;
+}
+
+.filter:active {
+    background-color: $medium-primary;
+    color: $light-primary;
 }
 
 /* Flex */ 

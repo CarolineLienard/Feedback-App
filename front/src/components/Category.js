@@ -2,13 +2,13 @@ import React from 'react'
 
 function Category() {
   return (
-    <div className='category container'>
-        <button>All</button>
-        <button>UI</button>
-        <button>UX</button>
-        <button>Enhancement</button>
-        <button>Bug</button>
-        <button>Feature</button>
+    <div className='category container flex'>
+        <button className='filter'>All</button>
+        <button className='filter'>UI</button>
+        <button className='filter'>UX</button>
+        <button className='filter'>Enhancement</button>
+        <button className='filter'>Bug</button>
+        <button className='filter'>Feature</button>
     </div>
   )
 }
