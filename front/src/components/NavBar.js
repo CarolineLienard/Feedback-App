@@ -1,25 +1,28 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 
+import FilterDropMenu from './FilterDropMenu'
+
 import bubbleIcon from "../assets/icon-suggestions.svg"
-import chevronDown from "../assets/icon-arrow-down.svg"
 import plusIcon from "../assets/icon-plus.svg"
 
 function NavBar({suggestCount}) {
 
+  function handleFeedbackFilter (feedbackFilter) {
+    console.log(feedbackFilter);
+  }
+
   return (
     <div className='navBar flex align-center gap-1 between'>
       
-      <div className='navBar__suggestion flex'>
+      <div className='navBar__suggestion flex align-center'>
         <div className='flex align-center gap-0-8'>
           <img src={bubbleIcon} alt="" />
           <span>{suggestCount} Suggestions</span>
         </div>
-        
+
         <div className='flex align-center gap-0-5'>
-          <p>Sort by: </p>
-          <h4>Most Upvote</h4>
-          <img src={chevronDown} alt="" />
+          <FilterDropMenu getFeedbackFilter={handleFeedbackFilter} />
         </div>
       </div>  
 
