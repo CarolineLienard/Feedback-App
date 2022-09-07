@@ -11,18 +11,27 @@ import { FilterContext } from '../context'
 
 function App() {
   const [feedbacks, setFeedbacks] = useState([])
-  const {feedbackFilter, handleFeedbackFilter} = useContext(FilterContext)
-  console.log(feedbackFilter)
+  const {feedbackFilter} = useContext(FilterContext)
+  const {categoryFilter} = useContext(FilterContext)
 
   useEffect(() => {
-    let mounted = true
     getFeedback().then((items) => {
-      if (mounted) {
-        setFeedbacks(items)
+      let arrayList = []
+      if (feedbackFilter === "mostVotes") {
+        arrayList = items.sort((a, b) => b.likes - a.likes)
+        setFeedbacks(arrayList)
+      }else if(feedbackFilter === "leastVotes"){
+        arrayList = items.sort((a, b) => a.likes - b.likes)
+        setFeedbacks(arrayList)
+      }else if(feedbackFilter === "mostComments"){
+        arrayList = items.sort((a, b) => b.comments - a.comments)
+        setFeedbacks(arrayList)
+      }else if(feedbackFilter === "leastComments"){
+        arrayList = items.sort((a, b) => a.comments - b.comments)
+        setFeedbacks(arrayList)
       }
     })
-    return () => (mounted=false)
-  }, [])
+  }, [feedbackFilter])
 
   return (
     <main className='flex'>

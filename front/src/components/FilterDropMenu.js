@@ -8,7 +8,7 @@ function FilterDropMenu() {
     const caret = document.querySelector('.caret')
     const menu = document.querySelector('.menu')
     const options = document.querySelectorAll('.menu li')
-    const {feedbackFilter, handleFeedbackFilter} = useContext(FilterContext)
+    const {handleFeedbackFilter} = useContext(FilterContext)
 
   
     function handleDropDown () {

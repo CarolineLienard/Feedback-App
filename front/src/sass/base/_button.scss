@@ -5,22 +5,26 @@ button {
     border: none;
     padding: 0.8rem 1.8rem;
     color: $light-primary;
-    &:hover {
-        filter: brightness(120%);
-        cursor: pointer;
-    }
 }
 
 .button-purple {
     background-color: $accent-primary;
     font-weight: 700;
     font-size: 14px;
+    &:hover {
+        filter: brightness(120%);
+        cursor: pointer;
+    }
 }
 
 .button-dark {
     background-color: $dark-secondary;
     font-weight: 700;
     font-size: 14px;
+    &:hover {
+        filter: brightness(120%);
+        cursor: pointer;
+    }
 }
 
 .filter {
@@ -32,4 +36,34 @@ button {
     width: fit-content;
     border-radius: 10px;
     border: none;
+}
+
+.filter-button {
+    background-color: $medium-background-secondary;
+    color: $medium-primary;
+    padding: 0.5rem 1rem;
+    font-size: 13px;
+    font-weight: 600;
+    width: fit-content;
+    border-radius: 10px;
+    border: none;
+    &:hover {
+        cursor: pointer;
+        background-color: $hover-third;
+    }
+}
+
+.filter-active {
+    background-color: $medium-primary;
+    color: $light-primary;
+    padding: 0.5rem 1rem;
+    font-size: 13px;
+    font-weight: 600;
+    width: fit-content;
+    border-radius: 10px;
+    border: none;
+    &:hover {
+        background-color: $medium-primary;
+        color: $light-primary;
+    }
 }
