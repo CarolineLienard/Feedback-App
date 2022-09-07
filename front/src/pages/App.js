@@ -6,10 +6,13 @@ import Feedbacks from '../components/Feedbacks'
 import '../sass/main.scss'
 
 import { getFeedback } from '../API/feedback'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { FilterContext } from '../context'
 
 function App() {
   const [feedbacks, setFeedbacks] = useState([])
+  const {feedbackFilter, handleFeedbackFilter} = useContext(FilterContext)
+  console.log(feedbackFilter)
 
   useEffect(() => {
     let mounted = true

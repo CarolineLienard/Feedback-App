@@ -8,10 +8,6 @@ import plusIcon from "../assets/icon-plus.svg"
 
 function NavBar({suggestCount}) {
 
-  function handleFeedbackFilter (feedbackFilter) {
-    console.log(feedbackFilter);
-  }
-
   return (
     <div className='navBar flex align-center gap-1 between'>
       
@@ -22,7 +18,7 @@ function NavBar({suggestCount}) {
         </div>
 
         <div className='flex align-center gap-0-5'>
-          <FilterDropMenu getFeedbackFilter={handleFeedbackFilter} />
+          <FilterDropMenu />
         </div>
       </div>  
 

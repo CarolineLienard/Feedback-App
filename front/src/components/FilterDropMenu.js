@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { FilterContext } from '../context'
 import chevronDown from '../assets/icon-arrow-down.svg'
 
-function FilterDropMenu({getFeedbackFilter}) {
+function FilterDropMenu() {
   
     const selected = document.querySelector('.selected')
     const caret = document.querySelector('.caret')
     const menu = document.querySelector('.menu')
     const options = document.querySelectorAll('.menu li')
+    const {feedbackFilter, handleFeedbackFilter} = useContext(FilterContext)
 
+  
     function handleDropDown () {
         caret.classList.toggle('caret-rotate')
         menu.classList.toggle('menu-open')
@@ -16,7 +19,7 @@ function FilterDropMenu({getFeedbackFilter}) {
     function handleSelect (e) {
         const element = e.target
         const name = element.getAttribute("name")
-        getFeedbackFilter(name);
+        handleFeedbackFilter(name);
     }
 
     options.forEach(option => {
