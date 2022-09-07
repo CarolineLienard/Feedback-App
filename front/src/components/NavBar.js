@@ -5,7 +5,7 @@ import bubbleIcon from "../assets/icon-suggestions.svg"
 import chevronDown from "../assets/icon-arrow-down.svg"
 import plusIcon from "../assets/icon-plus.svg"
 
-function NavBar() {
+function NavBar({suggestCount}) {
 
   return (
     <div className='navBar flex align-center gap-1 between'>
@@ -13,7 +13,7 @@ function NavBar() {
       <div className='navBar__suggestion flex'>
         <div className='flex align-center gap-0-8'>
           <img src={bubbleIcon} alt="" />
-          <span>6 Suggestions</span>
+          <span>{suggestCount} Suggestions</span>
         </div>
         
         <div className='flex align-center gap-0-5'>

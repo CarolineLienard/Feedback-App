@@ -30,7 +30,7 @@ function App() {
       </div>
 
       <div className='feedbackContainer flex flex-col'>
-        <NavBar />
+        <NavBar suggestCount={feedbacks.length} />
         <Feedbacks feedbacks={feedbacks} />
       </div>
     </main>

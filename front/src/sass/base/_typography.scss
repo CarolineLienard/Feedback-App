@@ -1,0 +1,58 @@
+/* Typography */
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.33px;
+    color: $dark-secondary;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+    color: $dark-secondary;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.25px;
+    color: $dark-secondary;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    color: $dark-secondary;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: $medium-secondary;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    color: $medium-secondary;
+}
+
+a {
+    text-decoration: none;
+}
+
+.view-link {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    text-decoration: underline;
+    color: $medium-primary;
+}
+
+span {
+    font-size: 16px;
+    font-weight: 700;
+    color: $dark-secondary;
+}

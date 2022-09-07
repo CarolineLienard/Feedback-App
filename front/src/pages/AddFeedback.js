@@ -54,7 +54,6 @@ function AddFeedback() {
     }
   }
     
-  
   return (
     <div className='addFeedback flex flex-col'>
       {handleSnackBar()}
