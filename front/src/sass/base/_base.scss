@@ -1,7 +1,6 @@
 /* General */
 * {
     font-family: "Jost";
-    color: $dark-secondary;
 }
 
 body {
@@ -13,24 +12,28 @@ h1 {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.33px;
+    color: $dark-secondary;
 }
 
 h2 {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.25px;
+    color: $dark-secondary;
 }
 
 h3 {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: -0.25px;
+    color: $dark-secondary;
 }
 
 h4 {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.2px;
+    color: $dark-secondary;
 }
 
 h5 {
@@ -61,20 +64,32 @@ a {
 span {
     font-size: 16px;
     font-weight: 700;
+    color: $dark-secondary;
 }
 
-/* Button */ 
+/* Button */
 
-.button-purple {
-    background-color: $accent-primary;
+button {
     border-radius: 10px;
     border: none;
-    color: $light-primary;
     padding: 0.8rem 1.8rem;
+    color: $light-primary;
     &:hover {
         filter: brightness(120%);
         cursor: pointer;
     }
+}
+
+.button-purple {
+    background-color: $accent-primary;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.button-dark {
+    background-color: $dark-secondary;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .filter {
@@ -86,6 +101,10 @@ span {
     width: fit-content;
     border-radius: 10px;
     border: none;
+}
+
+.snackBar {
+    background-color: red;
 }
 
 /* Container */ 
@@ -111,6 +130,10 @@ span {
 
 .justify-center {
     justify-content: center;
+}
+
+.justify-end {
+    justify-content: end;
 }
 
 .between {

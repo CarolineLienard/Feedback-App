@@ -23,12 +23,12 @@ function NavBar() {
         </div>
       </div>  
 
-      <button className='button-purple flex align-center gap-0-5'>
-        <img src={plusIcon} alt="" />
-        <Link to={'/addFeedback'}>
-          <h4>Add Feeback</h4>
-        </Link>
-      </button>     
+      <Link to={'/addFeedback'}>
+        <button className='button-purple flex align-center gap-0-5'>
+          <img src={plusIcon} alt="" />
+            <h4>Add Feeback</h4>
+        </button>     
+      </Link>
       
     </div>
   )

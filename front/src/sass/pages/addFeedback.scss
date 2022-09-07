@@ -1,3 +1,42 @@
 .addFeedback {
-    background-color: $light-primary;
+    padding: 4rem 29rem;
+    gap: 3.5rem;
+    p {
+        font-size: 14px;
+    }
+    .container {
+        padding: 2.5rem;
+        gap: 3rem;
+        #newIcon {
+            position: relative;
+            img {
+                position: absolute;
+                top: -4rem;
+                width: 3rem;
+            }
+            h1 {
+                padding-top: 1rem;
+            }
+        }
+        .inputContainer {
+            gap: 2rem;
+            .newInput {
+                gap: 0.8rem;
+                .newText {
+                    background-color: $light-background-secondary;
+                    padding: 0.5rem 1rem;
+                }
+                .newSelect {
+                    background-color: $light-background-secondary;
+                    padding: 1rem 1.2rem;
+                }
+                input {
+                    width: 100%;
+                    border: none;
+                    background-color: $light-background-secondary;
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
 }
