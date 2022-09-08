@@ -3,6 +3,7 @@ import Category from '../components/Category'
 import Roadmap from '../components/Roadmap'
 import NavBar from '../components/NavBar'
 import Feedbacks from '../components/Feedbacks'
+import EmptyFeedback from '../components/EmptyFeedback'
 import '../sass/main.scss'
 
 import { getFeedback, getFilterCategory } from '../API/feedback'
@@ -55,7 +56,9 @@ function App() {
 
       <div className='feedbackContainer flex flex-col'>
         <NavBar suggestCount={feedbacks.length} />
-        <Feedbacks feedbacks={feedbacks} />
+        {
+          feedbacks.length === 0 ? <EmptyFeedback /> : <Feedbacks feedbacks={feedbacks} />
+        }
       </div>
     </main>
   );

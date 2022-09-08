@@ -1,0 +1,15 @@
+.emptyFeedback {
+    padding: 8rem;
+    gap: 1.5rem;
+    img {
+        width: 20%;
+    }
+    div {
+        padding: 2rem 7rem;
+        text-align: center;
+        gap: 1.5rem;
+        p {
+            line-height: 1.5rem;
+        }
+    }
+}

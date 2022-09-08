@@ -29,7 +29,7 @@
     left: 50%;
     width: 100%;
     transform: translateX(-50%);
-    opacity: 0;
+    display: none;
     z-index: 1;
 }
 
@@ -57,5 +57,4 @@
 
 .menu-open {
     display: block;
-    opacity: 1;
 }
