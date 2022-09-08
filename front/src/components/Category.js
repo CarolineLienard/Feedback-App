@@ -5,7 +5,7 @@ import { FilterContext } from '../context'
 function Category() {
 
   const {handleCategoryFilter} = useContext(FilterContext)
-  const [isActive, setIsActive] = useState('')
+  const [isActive, setIsActive] = useState('All')
 
   function handleCategory (e) {
     handleCategoryFilter(e.target.name)

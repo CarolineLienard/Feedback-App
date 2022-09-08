@@ -5,7 +5,7 @@ import NavBar from '../components/NavBar'
 import Feedbacks from '../components/Feedbacks'
 import '../sass/main.scss'
 
-import { getFeedback } from '../API/feedback'
+import { getFeedback, getFilterCategory } from '../API/feedback'
 import { useEffect, useState, useContext } from 'react'
 import { FilterContext } from '../context'
 
@@ -32,6 +32,18 @@ function App() {
       }
     })
   }, [feedbackFilter])
+
+  useEffect(() => {
+    if (categoryFilter === "All") {
+      getFeedback().then((items) => {
+        setFeedbacks(items) 
+      }) 
+    } else {
+      getFilterCategory(categoryFilter).then((items) => {
+      setFeedbacks(items)
+      })
+    }  
+  }, [categoryFilter])
 
   return (
     <main className='flex'>

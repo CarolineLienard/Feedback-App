@@ -9,3 +9,7 @@ export function getFeedback() {
 export function addFeedback(data) {
   return axios.post(API_URL, data).then((response) => response.data)
 }
+
+export function getFilterCategory(categoryFilter) {
+  return axios.get(`${API_URL}/category/${categoryFilter}`).then((response) => response.data)
+}
