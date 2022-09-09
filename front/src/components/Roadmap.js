@@ -1,11 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Roadmap() {
   return (
     <div className='roadmap container flex flex-col gap-1-5'>
         <div className='flex align-center between'>
             <h3>Roadmap</h3>
-            <a className='view-link' href="">View</a>
+            <Link to="/roadmap">
+                <a className='view-link' href="">View</a>
+            </Link>
         </div>
 
         <div className='flex flex-col gap-0-8'>

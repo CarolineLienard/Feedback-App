@@ -10,6 +10,7 @@ import { getFeedback, getFilterCategory } from '../API/feedback'
 import { useEffect, useState, useContext } from 'react'
 import { FilterContext } from '../context'
 
+
 function App() {
   const [feedbacks, setFeedbacks] = useState([])
   const {feedbackFilter} = useContext(FilterContext)

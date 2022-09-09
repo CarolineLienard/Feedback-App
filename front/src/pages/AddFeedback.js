@@ -46,7 +46,8 @@ function AddFeedback() {
         body: body,
         category: category,
         comments: 2,
-        likes: 51
+        likes: 51, 
+        status: "null"
       }
       addFeedback(data).then(()=> navigate('/'))
     } else {
