@@ -44,3 +44,22 @@ input, textarea {
         height: 5rem;
     }
 }
+
+.roadmapPage{
+    padding: 3rem 8rem;
+    gap: 2.5rem;
+    .roadmapHeader {
+        background-color: $dark-secondary;
+        border-radius: 10px;
+        padding: 1.5rem 2rem;
+        h1, h4 {
+            color: $light-primary;
+        }
+    }
+    .roadmapContainer {
+        gap: 2rem;
+        .statusCol {
+            gap: 1.8rem;
+        }
+    }
+}
