@@ -1,7 +1,7 @@
 # Feedback App
 ## A projet with Ruby on rails and React 
 
-This is my solution to the Feedback app from Front End Mentor. I simplified this challenge and just made the user able to add a task. I focused on learning the basics of Rails.
+This is my solution to the Feedback app from Front End Mentor. I focused on learning the basics of Rails and advanced React skills.
 
 ## Overview
 
