@@ -1,37 +1,17 @@
 import React from "react" 
+import Feedback from "./Feedback"
 
-import commentIcon from "../assets/icon-comments.svg"
-import chevronUp from "../assets/icon-arrow-up.svg"
+import { Link } from "react-router-dom"
 
-function Feedbacks (props) {
+function Feedbacks ({feedbacks}) {
     return (
         <div className="flex flex-col gap-1-5">
-            {props.feedbacks.map((feedback)=> {
-                return <div key={feedback.id} className="feedback container flex align-center between">
-                    
-                    <div className="feedback__title flex">
-                        <div className="small-container flex flex-col align-center">
-                            <div>
-                                <img src={chevronUp} alt="" />
-                            </div>
-                            <span>{feedback.likes}</span>
-                        </div>
-
-                        <div className="flex flex-col gap-0-8">
-                            <h3>{feedback.title}</h3>
-                            <p>{feedback.body}</p>
-                            <p className="filter">{feedback.category}</p>
-                        </div>
-                    </div>    
-                    
-                    <div className="feedback__comment flex align-center gap-0-5">
-                        <div>
-                            <img src={commentIcon} alt=""/>
-                        </div>
-                        <span>{feedback.comments}</span>
-                    </div>
-
-                </div>
+            {feedbacks.map((feedback)=> {
+                return ( 
+                    <Link to={`/feedbackDetails/${feedback.id}`} key={feedback.id}>
+                        <Feedback feedback={feedback}/>
+                    </Link>
+                )
             })}
         </div>
     )

@@ -27,6 +27,28 @@ button {
     }
 }
 
+.button-blue {
+    background-color: $medium-primary;
+    font-weight: 700;
+    font-size: 14px;
+    &:hover {
+        filter: brightness(120%);
+        cursor: pointer;
+    }
+}
+
+.button-delete {
+    background-color: $deleted-third;
+    font-weight: 700;
+    font-size: 14px;
+    &:hover {
+        filter: brightness(120%);
+        cursor: pointer;
+    }
+}
+
+
+
 .filter {
     background-color: $medium-background-secondary;
     color: $medium-primary;
