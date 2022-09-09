@@ -1,11 +1,13 @@
 import React from 'react'
-import Feedback from '../components/Feedback';
-import backIcon from '../assets/icon-arrow-left.svg'
-
 import { getOneFeedback } from '../API/feedback'
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
+
+import Feedback from '../components/Feedback';
+import AddComment from '../components/AddComment';
+
+import backIcon from '../assets/icon-arrow-left.svg'
 
 
 function FeedbackDetails() {
@@ -33,6 +35,7 @@ function FeedbackDetails() {
         </Link>
       </div>
         <Feedback feedback={feedback}/>
+        <AddComment />
     </div>
   )
 }
