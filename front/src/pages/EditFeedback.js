@@ -24,6 +24,7 @@ function EditFeedback() {
   const [category, setCategory] = useState('')
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
+  const [status, setStatus] = useState('')
 
 
   useEffect(() => {
@@ -32,6 +33,11 @@ function EditFeedback() {
         setTitle(res.title)
         setCategory(res.category)
         setBody(res.body)
+        if (res.status === "null") {
+          setStatus('Planned')
+        } else {
+          setStatus(res.status)
+        }
     })
   }, [])
 
@@ -54,6 +60,10 @@ function EditFeedback() {
     setCategory(event.target.value)
   }
 
+  const handleStatus = (event) => {
+    setStatus(event.target.value)
+  }
+
   function update(){
     if(title!=="" && body!=="" && category!=="") {
       const data = {
@@ -61,7 +71,8 @@ function EditFeedback() {
         body: body,
         category: category,
         comments: 2,
-        likes: 51
+        likes: 51,
+        status: status
       }
       updateFeedback(id, data).then(() => navigate('/'))
     } else {
@@ -127,6 +138,29 @@ function EditFeedback() {
                 <MenuItem value={'UI'}>UI</MenuItem>
                 <MenuItem value={'Enhancement'}>Enhancement</MenuItem>
                 <MenuItem value={'Bug'}>Bug</MenuItem>
+            </Select>
+
+          </div>
+
+          <div className='newInput flex flex-col'>
+            
+            <div>
+              <h4>Update Status</h4>
+              <p>Change feedback state</p>
+            </div>
+            
+            <Select 
+                disableUnderline
+                classes={{filled:"newSelect"}}
+                variant="filled" 
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={status}
+                onChange={handleStatus}
+              >
+                <MenuItem value={'Planned'}>Planned</MenuItem>
+                <MenuItem value={'Progress'}>In-Progress</MenuItem>
+                <MenuItem value={'Live'}>Live</MenuItem>
             </Select>
 
           </div>
