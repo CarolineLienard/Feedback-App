@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Roadmap() {
+function Roadmap({plannedLength, liveLength, progressLength}) {
   return (
     <div className='roadmap container flex flex-col gap-1-5'>
         <div className='flex align-center between'>
@@ -19,7 +19,7 @@ function Roadmap() {
                     </svg>
                     <p>Planned</p>
                 </div>
-                <h5>2</h5>
+                <h5>{plannedLength}</h5>
             </div>
 
             <div className='flex align-center between'>
@@ -29,7 +29,7 @@ function Roadmap() {
                     </svg>
                     <p>In-Progress</p>
                 </div>
-                <h5>3</h5>
+                <h5>{progressLength}</h5>
             </div>
 
             <div className='flex align-center between'>
@@ -39,7 +39,7 @@ function Roadmap() {
                     </svg>
                     <p>Live</p>
                 </div>
-                <h5>1</h5>
+                <h5>{liveLength}</h5>
             </div>
         </div>
     </div>

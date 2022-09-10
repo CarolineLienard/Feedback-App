@@ -20,7 +20,7 @@ function EditFeedback() {
   let navigate = useNavigate()
 
   const { id } = useParams()
-  const [feedback, setFeedback] = useState('')
+  const [, setFeedback] = useState('')
   const [category, setCategory] = useState('')
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
@@ -159,7 +159,7 @@ function EditFeedback() {
                 onChange={handleStatus}
               >
                 <MenuItem value={'Planned'}>Planned</MenuItem>
-                <MenuItem value={'Progress'}>In-Progress</MenuItem>
+                <MenuItem value={'In Progress'}>In-Progress</MenuItem>
                 <MenuItem value={'Live'}>Live</MenuItem>
             </Select>
 

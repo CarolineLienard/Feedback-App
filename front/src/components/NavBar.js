@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 import FilterDropMenu from './FilterDropMenu'
 
 import bubbleIcon from "../assets/icon-suggestions.svg"
-import plusIcon from "../assets/icon-plus.svg"
 
 function NavBar({suggestCount}) {
 
@@ -24,8 +23,7 @@ function NavBar({suggestCount}) {
 
       <Link to={'/addFeedback'}>
         <button className='button-purple flex align-center gap-0-5'>
-          <img src={plusIcon} alt="" />
-            <h4>Add Feeback</h4>
+            <h4>+ Add Feeback</h4>
         </button>     
       </Link>
       

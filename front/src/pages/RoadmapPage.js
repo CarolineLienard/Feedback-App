@@ -1,12 +1,32 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from "react-router-dom"
+import { getFeedback } from '../API/feedback'
 
 import StatusFeedback from '../components/StatusFeedback'
 
 import backIcon from '../assets/icon-arrow-left.svg'
 
-
 function RoadmapPage() {
+  const [feedbacks, setFeedbacks] = useState([])
+  const [planned, setPlanned ] = useState([])
+  const [progress, setProgress ] = useState([])
+  const [live, setLive ] = useState([])
+
+  useEffect(() => {
+    getFeedback().then(res => {
+      setFeedbacks(res)
+    })
+  }, [])
+
+  useEffect(() => {
+    const arrayPlanned =  feedbacks.filter((el) => el.status === 'Planned')
+    const arrayProgress =  feedbacks.filter((el) => el.status === 'In Progress')
+    const arrayLive =  feedbacks.filter((el) => el.status === 'Live')
+    setPlanned(arrayPlanned)
+    setProgress(arrayProgress)
+    setLive(arrayLive)
+  },[feedbacks])
+
   return (
 
     <div className='roadmapPage flex flex-col'>
@@ -30,26 +50,43 @@ function RoadmapPage() {
 
         <div className='statusCol flex flex-col'>
           <div>
-            <h3>Planned (3)</h3>
+            <h3>Planned ({planned.length})</h3>
             <p>Ideas prioritized for research</p>
           </div>
-          <StatusFeedback />
+
+          {planned.map((feedback)=> {
+            return (
+              <StatusFeedback feedback={feedback}/>
+            )
+          })
+        }
+          
         </div>
 
         <div className='statusCol flex flex-col'>
           <div>
-            <h3>In-Progress (3)</h3>
+            <h3>In-Progress ({progress.length})</h3>
             <p>Ideas prioritized for research</p>
           </div>
-          <StatusFeedback />
+          {progress.map((feedback)=> {
+            return (
+              <StatusFeedback feedback={feedback}/>
+            )
+          })
+        }
         </div>
 
         <div className='statusCol flex flex-col'>
           <div>
-            <h3>Live (3)</h3>
+            <h3>Live ({live.length})</h3>
             <p>Ideas prioritized for research</p>
           </div>
-          <StatusFeedback />
+          {live.map((feedback)=> {
+            return (
+              <StatusFeedback feedback={feedback}/>
+            )
+          })
+        }
         </div>
 
       </div>

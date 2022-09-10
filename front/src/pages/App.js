@@ -13,8 +13,14 @@ import { FilterContext } from '../context'
 
 function App() {
   const [feedbacks, setFeedbacks] = useState([])
+
   const {feedbackFilter} = useContext(FilterContext)
   const {categoryFilter} = useContext(FilterContext)
+
+  const [planned, setPlanned ] = useState([])
+  const [progress, setProgress ] = useState([])
+  const [live, setLive ] = useState([])
+
 
   useEffect(() => {
     getFeedback().then((items) => {
@@ -47,12 +53,21 @@ function App() {
     }  
   }, [categoryFilter])
 
+  useEffect(() => {
+    const arrayPlanned =  feedbacks.filter((el) => el.status === 'Planned')
+    const arrayProgress =  feedbacks.filter((el) => el.status === 'In Progress')
+    const arrayLive =  feedbacks.filter((el) => el.status === 'Live')
+    setPlanned(arrayPlanned)
+    setProgress(arrayProgress)
+    setLive(arrayLive)
+  },[feedbacks])
+
   return (
     <main className='flex'>
       <div className='headerContainer flex flex-col'>
         <Header />
         <Category />
-        <Roadmap />
+        <Roadmap liveLength={live.length} progressLength={progress.length} plannedLength={planned.length} />
       </div>
 
       <div className='feedbackContainer flex flex-col'>
