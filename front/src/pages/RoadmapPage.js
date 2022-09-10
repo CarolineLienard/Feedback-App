@@ -3,8 +3,9 @@ import { Link } from "react-router-dom"
 import { getFeedback } from '../API/feedback'
 
 import StatusFeedback from '../components/StatusFeedback'
+import EmptyFeedback from '../components/EmptyFeedback'
 
-import backIcon from '../assets/icon-arrow-left.svg'
+import backIcon from '../assets/icons/arrow/icon-arrow-left.svg'
 
 function RoadmapPage() {
   const [feedbacks, setFeedbacks] = useState([])
@@ -12,6 +13,7 @@ function RoadmapPage() {
   const [progress, setProgress ] = useState([])
   const [live, setLive ] = useState([])
 
+ 
   useEffect(() => {
     getFeedback().then(res => {
       setFeedbacks(res)
@@ -25,27 +27,10 @@ function RoadmapPage() {
     setPlanned(arrayPlanned)
     setProgress(arrayProgress)
     setLive(arrayLive)
-  },[feedbacks])
-
-  return (
-
-    <div className='roadmapPage flex flex-col'>
-
-      <div className='roadmapHeader flex between'>
-        <div className='flex flex-col'>
-          <div className='flex align-center gap-0-8'>
-            <img src={backIcon} alt="" />
-            <Link to={'/'}>
-              <h4>Go Back</h4>
-            </Link>
-          </div>
-          <h1>Roadpmap</h1>
-        </div>
-        <Link to={'/addFeedback'}>
-          <button className='button-purple'>+ Add Feedback</button>
-        </Link>
-      </div>
-
+  },[feedbacks]) 
+  
+  function renderContent() {
+    return (
       <div className='roadmapContainer flex'>
 
         <div className='statusCol flex flex-col'>
@@ -60,7 +45,6 @@ function RoadmapPage() {
             )
           })
         }
-          
         </div>
 
         <div className='statusCol flex flex-col'>
@@ -88,13 +72,31 @@ function RoadmapPage() {
           })
         }
         </div>
-
       </div>
+    )
+  }
 
+
+  return (
+
+    <div className='roadmapPage flex flex-col'>
+
+      <div className='roadmapHeader flex between'>
+        <div className='flex flex-col gap-0-5'>
+          <div className='flex align-center gap-0-8'>
+            <img src={backIcon} alt="" />
+            <Link to={'/'}>
+              <h4>Go Back</h4>
+            </Link>
+          </div>
+          <h1>Roadpmap</h1>
+        </div>
+        <Link to={'/addFeedback'}>
+          <button className='button-purple'>+ Add Feedback</button>
+        </Link>
+      </div>
+      {feedbacks.length === 0 ? <EmptyFeedback /> : renderContent()}
     </div>
-    
-    
-
   )
 }
 

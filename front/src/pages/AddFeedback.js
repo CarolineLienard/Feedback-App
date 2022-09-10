@@ -3,12 +3,13 @@ import { Link } from "react-router-dom"
 import { addFeedback } from '../API/feedback'
 import { useNavigate } from "react-router-dom"
 
-import backIcon from '../assets/icon-arrow-left.svg'
-import newIcon from '../assets/icon-new-feedback.svg'
+import CategorySelect from '../components/CategorySelect'
+
+import backIcon from '../assets/icons/arrow/icon-arrow-left.svg'
+import newIcon from '../assets/icons/others/icon-new-feedback.svg'
 
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
-import TextField from '@mui/material/TextField';
 import Snackbar from '@mui/material/Snackbar'
 import Alert from '@mui/material/Alert'
 
@@ -78,11 +79,8 @@ function AddFeedback() {
               <h4>Feedback Title</h4>
               <p>Add a short, descriptive headline</p>
             </div>
-            <TextField 
-              variant="standard" 
-              InputProps={{disableUnderline: true,}} 
-              classes={{root:"newText"}}
-              id="outlined-multiline-flexible"
+            <input 
+              maxLength="25"
               onChange={(e)=> setTitle(e.target.value)}
             />
           </div>
@@ -93,23 +91,8 @@ function AddFeedback() {
               <h4>Category</h4>
               <p>Choose a category for your feedback</p>
             </div>
-            
-            <Select 
-                disableUnderline
-                classes={{filled:"newSelect"}}
-                variant="filled" 
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={category}
-                onChange={handleChange}
-              >
-                <MenuItem value={'Feature'}>Feature</MenuItem>
-                <MenuItem value={'UX'}>UX</MenuItem>
-                <MenuItem value={'UI'}>UI</MenuItem>
-                <MenuItem value={'Enhancement'}>Enhancement</MenuItem>
-                <MenuItem value={'Bug'}>Bug</MenuItem>
-            </Select>
 
+            <CategorySelect onChange={handleChange} />
           </div>
 
           <div className='newInput flex flex-col'>
@@ -117,13 +100,8 @@ function AddFeedback() {
               <h4>Feedback Detail</h4>
               <p>Include any specific comments on what should be improved, added, etc.</p>
             </div>
-            <TextField 
-              variant="standard" 
-              InputProps={{disableUnderline: true,}} 
-              classes={{root:"newText"}}
-              id="outlined-multiline-flexible"
-              multiline
-              rows={4}
+            <textarea
+              maxLength={60}
               onChange={(e)=> setBody(e.target.value) }
             />
           </div>

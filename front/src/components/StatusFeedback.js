@@ -1,10 +1,10 @@
 import React from 'react'
 
-import iconCircle from '../assets/icon-li.svg'
-import circlePurple from '../assets/circle-purple.svg'
-import circleBlue from '../assets/circle-blue.svg'
-import commentIcon from "../assets/icon-comments.svg"
-import chevronUp from "../assets/icon-arrow-up.svg"
+import iconCircle from '../assets/icons/circle/icon-li.svg'
+import circlePurple from '../assets/icons/circle/circle-purple.svg'
+import circleBlue from '../assets/icons/circle/circle-blue.svg'
+import commentIcon from "../assets/icons/others/icon-comments.svg"
+import chevronUp from "../assets/icons/arrow/icon-arrow-up.svg"
 
 
 function StatusFeedback({feedback}) {

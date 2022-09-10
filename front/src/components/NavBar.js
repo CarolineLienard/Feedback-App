@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import FilterDropMenu from './FilterDropMenu'
 
-import bubbleIcon from "../assets/icon-suggestions.svg"
+import bubbleIcon from "../assets/icons/others/icon-suggestions.svg"
 
 function NavBar({suggestCount}) {
 

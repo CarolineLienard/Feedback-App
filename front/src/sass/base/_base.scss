@@ -64,3 +64,16 @@ input, textarea {
         }
     }
 }
+
+.categorySelector {
+    border-radius: 5px;
+    padding: 1.2rem;
+    background-color: $medium-background-secondary;
+    p {
+        color: $dark-secondary;
+    }
+}
+
+.categorySelector-Active {
+    border: 2px solid $medium-primary;
+}

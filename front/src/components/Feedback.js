@@ -1,7 +1,7 @@
 import React from 'react'
 
-import commentIcon from "../assets/icon-comments.svg"
-import chevronUp from "../assets/icon-arrow-up.svg"
+import commentIcon from "../assets/icons/others/icon-comments.svg"
+import chevronUp from "../assets/icons/arrow/icon-arrow-up.svg"
 
 function Feedback({feedback}) {
     return (

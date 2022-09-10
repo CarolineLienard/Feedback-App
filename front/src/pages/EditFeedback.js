@@ -4,8 +4,8 @@ import { useParams, useNavigate } from "react-router-dom"
 
 import { getOneFeedback, updateFeedback, deleteFeedback } from '../API/feedback'
 
-import backIcon from '../assets/icon-arrow-left.svg'
-import editIcon from '../assets/icon-edit-feedback.svg'
+import backIcon from '../assets/icons/arrow/icon-arrow-left.svg'
+import editIcon from '../assets/icons/others/icon-edit-feedback.svg'
 
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'

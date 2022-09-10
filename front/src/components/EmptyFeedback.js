@@ -1,5 +1,7 @@
 import React from 'react'
-import illuEmpty from '../assets/suggestions/illustration-empty.svg'
+import { Link } from 'react-router-dom'
+
+import illuEmpty from '../assets/illustration/illustration-empty.svg'
 
 function EmptyFeedback() {
   return (
@@ -10,7 +12,9 @@ function EmptyFeedback() {
             <p>Got a suggestion? Found a bug that needs to be squashed? 
             We love hearing about new ideas to improve our app.</p>
         </div>
-        <button className='button-purple'>+ Add Feedback</button>
+        <Link to='/addFeedback'>
+          <button className='button-purple'>+ Add Feedback</button>
+        </Link>
     </div>
   )
 }

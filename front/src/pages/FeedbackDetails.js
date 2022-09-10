@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 import Feedback from '../components/Feedback';
 import AddComment from '../components/AddComment';
 
-import backIcon from '../assets/icon-arrow-left.svg'
+import backIcon from '../assets/icons/arrow/icon-arrow-left.svg'
 
 
 function FeedbackDetails() {
