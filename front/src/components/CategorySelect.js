@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import chevronDown from '../assets/icons/arrow/chevron-blue.svg'
 
-function CategorySelect() {
+function CategorySelect({category}) {
     const [selected, setSelected] = useState('')
     const [caret, setCaret] = useState('')
     const [menu, setMenu] = useState('')
@@ -40,12 +40,13 @@ function CategorySelect() {
         caret.classList.toggle('caret-rotate')
         menu.classList.toggle('menu-open')
         categoryInput.classList.toggle('categorySelector-Active')
+
     }  
 
     function handleSelect (e) {
         const element = e.target
         const name = element.getAttribute("value")
-        setCategoryName(name)
+        category(name)
     }
 
   return (

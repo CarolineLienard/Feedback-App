@@ -8,8 +8,6 @@ import CategorySelect from '../components/CategorySelect'
 import backIcon from '../assets/icons/arrow/icon-arrow-left.svg'
 import newIcon from '../assets/icons/others/icon-new-feedback.svg'
 
-import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
 import Snackbar from '@mui/material/Snackbar'
 import Alert from '@mui/material/Alert'
 
@@ -36,8 +34,8 @@ function AddFeedback() {
     )
   }
 
-  const handleChange = (event) => {
-    setCategory(event.target.value)
+  const handleCategory = (category) => {
+    setCategory(category)
   }
 
   function onSubmit(){
@@ -92,7 +90,7 @@ function AddFeedback() {
               <p>Choose a category for your feedback</p>
             </div>
 
-            <CategorySelect onChange={handleChange} />
+            <CategorySelect category={handleCategory} />
           </div>
 
           <div className='newInput flex flex-col'>
