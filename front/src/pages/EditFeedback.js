@@ -4,12 +4,12 @@ import { useParams, useNavigate } from "react-router-dom"
 
 import { getOneFeedback, updateFeedback, deleteFeedback } from '../API/feedback'
 
+import MenuDrop from '../components/menu-drop/MenuDrop'
+import {CATEGORIES, STATUS} from '../components/menu-drop/data'
+
 import backIcon from '../assets/icons/arrow/icon-arrow-left.svg'
 import editIcon from '../assets/icons/others/icon-edit-feedback.svg'
 
-import Select from '@mui/material/Select'
-import MenuItem from '@mui/material/MenuItem'
-import TextField from '@mui/material/TextField';
 import Snackbar from '@mui/material/Snackbar'
 import Alert from '@mui/material/Alert'
 
@@ -25,7 +25,6 @@ function EditFeedback() {
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const [status, setStatus] = useState('')
-
 
   useEffect(() => {
     getOneFeedback(id).then(res => {
@@ -56,12 +55,12 @@ function EditFeedback() {
     )
   }
 
-  const handleChange = (event) => {
-    setCategory(event.target.value)
+  const handleCategory = (category) => {
+    setCategory(category)
   }
 
-  const handleStatus = (event) => {
-    setStatus(event.target.value)
+  const handleStatus = (status) => {
+    setStatus(status)
   }
 
   function update(){
@@ -70,8 +69,6 @@ function EditFeedback() {
         title: title,
         body: body,
         category: category,
-        comments: 2,
-        likes: 51,
         status: status
       }
       updateFeedback(id, data).then(() => navigate('/'))
@@ -107,11 +104,7 @@ function EditFeedback() {
               <h4>Feedback Title</h4>
               <p>Add a short, descriptive headline</p>
             </div>
-            <TextField 
-              variant="standard" 
-              InputProps={{disableUnderline: true,}} 
-              classes={{root:"newText"}}
-              id="outlined-multiline-flexible"
+            <input
               value={title}
               onChange={(e)=> setTitle(e.target.value)}
             />
@@ -122,47 +115,18 @@ function EditFeedback() {
             <div>
               <h4>Category</h4>
               <p>Choose a category for your feedback</p>
-            </div>
-            
-            <Select 
-                disableUnderline
-                classes={{filled:"newSelect"}}
-                variant="filled" 
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={category}
-                onChange={handleChange}
-              >
-                <MenuItem value={'Feature'}>Feature</MenuItem>
-                <MenuItem value={'UX'}>UX</MenuItem>
-                <MenuItem value={'UI'}>UI</MenuItem>
-                <MenuItem value={'Enhancement'}>Enhancement</MenuItem>
-                <MenuItem value={'Bug'}>Bug</MenuItem>
-            </Select>
+            </div>  
 
+            <MenuDrop handleSelect={handleCategory} options={CATEGORIES} />
           </div>
 
           <div className='newInput flex flex-col'>
-            
             <div>
               <h4>Update Status</h4>
               <p>Change feedback state</p>
             </div>
             
-            <Select 
-                disableUnderline
-                classes={{filled:"newSelect"}}
-                variant="filled" 
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={status}
-                onChange={handleStatus}
-              >
-                <MenuItem value={'Planned'}>Planned</MenuItem>
-                <MenuItem value={'In Progress'}>In-Progress</MenuItem>
-                <MenuItem value={'Live'}>Live</MenuItem>
-            </Select>
-
+              <MenuDrop handleSelect={handleStatus} options={STATUS} />
           </div>
 
           <div className='newInput flex flex-col'>
@@ -170,12 +134,7 @@ function EditFeedback() {
               <h4>Feedback Detail</h4>
               <p>Include any specific comments on what should be improved, added, etc.</p>
             </div>
-            <TextField 
-              variant="standard" 
-              InputProps={{disableUnderline: true,}} 
-              classes={{root:"newText"}}
-              id="outlined-multiline-flexible"
-              multiline
+            <textarea
               rows={4}
               value={body}
               onChange={(e)=> setBody(e.target.value) }

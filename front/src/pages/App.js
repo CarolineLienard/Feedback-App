@@ -21,8 +21,7 @@ function App() {
   const [progress, setProgress ] = useState([])
   const [live, setLive ] = useState([])
 
-
-  useEffect(() => {
+  function handleFeedbacks () {
     getFeedback().then((items) => {
       let arrayList = []
       if (feedbackFilter === "mostVotes") {
@@ -39,6 +38,10 @@ function App() {
         setFeedbacks(arrayList)
       }
     })
+  }
+
+  useEffect(() => {
+    handleFeedbacks()
   }, [feedbackFilter])
 
   useEffect(() => {
@@ -73,7 +76,7 @@ function App() {
       <div className='feedbackContainer flex flex-col'>
         <NavBar suggestCount={feedbacks.length} />
         {
-          feedbacks.length === 0 ? <EmptyFeedback /> : <Feedbacks feedbacks={feedbacks} />
+          feedbacks.length === 0 ? <EmptyFeedback /> : <Feedbacks refreshPost={handleFeedbacks} feedbacks={feedbacks} />
         }
       </div>
     </main>

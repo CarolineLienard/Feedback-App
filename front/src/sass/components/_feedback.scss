@@ -1,5 +1,12 @@
 .feedback {
     padding: 2rem;
+    position: relative;
+    button {
+        cursor: pointer;
+        &:hover {
+            background-color: $hover-third;
+        }
+    }
     &__title {
         gap: 3rem;
         span {
@@ -8,5 +15,12 @@
     }
     &__comment {
         padding-right: 1rem;
+    }
+}
+
+.like-button-active {
+    background-color: $medium-primary;
+    span {
+        color: $light-primary;
     }
 }

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom"
 import { addFeedback } from '../API/feedback'
 import { useNavigate } from "react-router-dom"
 
-import CategorySelect from '../components/CategorySelect'
+import MenuDrop from '../components/menu-drop/MenuDrop'
+import {CATEGORIES} from '../components/menu-drop/data'
 
 import backIcon from '../assets/icons/arrow/icon-arrow-left.svg'
 import newIcon from '../assets/icons/others/icon-new-feedback.svg'
@@ -36,6 +37,7 @@ function AddFeedback() {
 
   const handleCategory = (category) => {
     setCategory(category)
+    console.log(category);
   }
 
   function onSubmit(){
@@ -44,8 +46,8 @@ function AddFeedback() {
         title: title,
         body: body,
         category: category,
-        comments: 2,
-        likes: 51, 
+        comments: 0,
+        likes: 0, 
         status: "null"
       }
       addFeedback(data).then(()=> navigate('/'))
@@ -90,7 +92,7 @@ function AddFeedback() {
               <p>Choose a category for your feedback</p>
             </div>
 
-            <CategorySelect category={handleCategory} />
+            <MenuDrop handleSelect={handleCategory} options={CATEGORIES} />
           </div>
 
           <div className='newInput flex flex-col'>

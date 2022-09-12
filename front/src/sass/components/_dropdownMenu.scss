@@ -1,3 +1,4 @@
+/* General */
 .dropdown {
     min-width: 18em;
     position: relative;
@@ -52,9 +53,33 @@
     background-image: url("../../assets/icons/others/icon-check.svg");
     background-repeat: no-repeat;
     background-position-y: 50%;
-    background-position-x: 90%;
+    background-position-x: 93%;
 }
 
 .menu-open {
     display: block;
+}
+
+/* Category & status style */
+
+.menu-category {
+    top: 5rem;
+}
+
+.select-category {
+    border-radius: 5px;
+    padding: 1.2rem;
+    background-color: $medium-background-secondary;
+    cursor: pointer;
+    p {
+        color: $dark-secondary;
+    }
+}
+
+.select-arrow {
+    width: 100%;
+}
+
+.select-active {
+    border: 2px solid $medium-primary;
 }
