@@ -17,6 +17,11 @@ export function getOwnedComment(feedback_id) {
   return axios.get(`${API_URL}/owned/${feedback_id}`).then((response) => response.data)
 }
 
+// Delete all comment from one feedback
+export function deleteOwnedComment(feedback_id) {
+  return axios.delete(`${API_URL}/owned/${feedback_id}`).then((response) => response.data)
+}
+
 // Post one comment
 export function addFeedbackComment(data) {
   return axios.post(API_URL, data).then((response) => response.data)

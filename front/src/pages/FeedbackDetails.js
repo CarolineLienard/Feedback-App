@@ -1,16 +1,16 @@
 import React from 'react'
-import { getOneFeedback } from '../API/feedback'
-import { getOwnedComment } from '../API/feedback_comments'
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
+
+import { getOneFeedback } from '../API/feedback'
+import { getOwnedComment } from '../API/feedback_comments'
 
 import Feedback from '../components/Feedback'
 import AddComment from '../components/AddComment'
 import Comment from '../components/Comment'
 
 import backIcon from '../assets/icons/arrow/icon-arrow-left.svg'
-
 
 function FeedbackDetails() {
   const { id } = useParams()
@@ -50,7 +50,6 @@ function FeedbackDetails() {
         )}
       </div>
         
-
         <AddComment feedbackId={id} />
     </div>
   )

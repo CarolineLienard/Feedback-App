@@ -76,7 +76,6 @@ function RoadmapPage() {
     )
   }
 
-
   return (
 
     <div className='roadmapPage flex flex-col'>
@@ -95,7 +94,7 @@ function RoadmapPage() {
           <button className='button-purple'>+ Add Feedback</button>
         </Link>
       </div>
-      {feedbacks.length === 0 ? <EmptyFeedback /> : renderContent()}
+      {planned.length === 0 && live.length === 0 && progress.length === 0 ? <EmptyFeedback /> : renderContent()}
     </div>
   )
 }

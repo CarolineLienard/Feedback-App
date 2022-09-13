@@ -7,7 +7,6 @@ Rails.application.routes.draw do
       resources :feedback_comments
       get 'feedback_comments/owned/:feedback_id', to: "feedback_comments#owned",defaults: {format: "js"}
 
-
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
