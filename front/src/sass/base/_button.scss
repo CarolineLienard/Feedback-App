@@ -1,5 +1,7 @@
 /* Button */
 
+
+/* General */
 button {
     border-radius: 10px;
     border: none;
@@ -48,6 +50,14 @@ button {
     }
 }
 
+.button-back {
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+/* Filter button */
 .filter {
     background-color: $medium-background-secondary;
     color: $medium-primary;

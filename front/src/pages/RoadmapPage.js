@@ -5,7 +5,7 @@ import { getFeedback } from '../API/feedback'
 import StatusFeedback from '../components/StatusFeedback'
 import EmptyFeedback from '../components/EmptyFeedback'
 
-import backIcon from '../assets/icons/arrow/icon-arrow-left.svg'
+import backIcon from '../assets/icons/arrow/icon-back-white.svg'
 
 function RoadmapPage() {
   const [feedbacks, setFeedbacks] = useState([])
@@ -88,7 +88,7 @@ function RoadmapPage() {
           <div className='flex align-center gap-0-8'>
             <img src={backIcon} alt="" />
             <Link to={'/'}>
-              <h4>Go Back</h4>
+              <h4 className='button-back'>Go Back</h4>
             </Link>
           </div>
           <h1>Roadpmap</h1>

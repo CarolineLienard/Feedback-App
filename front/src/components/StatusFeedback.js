@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import LikeButton from './LikeButton'
 
@@ -22,7 +23,9 @@ function StatusFeedback({feedback, refreshPost}) {
         <div className='flex flex-col gap-1'>
             <div className='flex flex-col gap-1'>
                 <div className='flex flex-col gap-0-5'>
-                    <h3>{feedback.title}</h3>
+                    <Link to={`/feedbackDetails/${feedback.id}`} key={feedback.id}>
+                        <h3>{feedback.title}</h3>
+                    </Link>
                     <p>{feedback.body}</p>
                 </div>
                 <p className="filter">{feedback.category}</p>

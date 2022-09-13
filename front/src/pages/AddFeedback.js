@@ -60,7 +60,7 @@ function AddFeedback() {
       {handleSnackBar()}
       <div className='flex align-center gap-0-8'>
         <img src={backIcon} alt="" />
-        <Link to={'/'}>
+        <Link to={-1}>
           <h4>Go Back</h4>
         </Link>
       </div>

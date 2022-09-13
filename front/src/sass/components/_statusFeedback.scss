@@ -6,7 +6,17 @@
     .small-container {
         margin-bottom: 0;
     }
+    h3 {
+        &:hover {
+            color: $medium-primary;
+            cursor: pointer;
+        }
+    }
     span {
         font-size: 13px;
     }
+}
+
+.comment-off {
+    color: red;
 }
