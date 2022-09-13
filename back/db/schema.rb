@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_09_101558) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_12_171748) do
+  create_table "feedback_comments", force: :cascade do |t|
+    t.string "content"
+    t.string "text"
+    t.string "feedback_id"
+    t.string "integer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "feedbacks", force: :cascade do |t|
     t.string "title"
     t.text "body"

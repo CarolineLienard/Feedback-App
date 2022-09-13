@@ -1,25 +1,30 @@
 import React from 'react'
 import { getOneFeedback } from '../API/feedback'
+import { getOwnedComment } from '../API/feedback_comments'
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 
-import Feedback from '../components/Feedback';
-import AddComment from '../components/AddComment';
+import Feedback from '../components/Feedback'
+import AddComment from '../components/AddComment'
+import Comment from '../components/Comment'
 
 import backIcon from '../assets/icons/arrow/icon-arrow-left.svg'
 
 
 function FeedbackDetails() {
-  const { id } = useParams();
+  const { id } = useParams()
   const [feedback, setFeedback] = useState('')
+  const [comments, setComments] = useState([])
   
   useEffect(() => {
     getOneFeedback(id).then(res => {
         setFeedback(res)
     })
+    getOwnedComment(id).then(res => {
+      setComments(res)
+    })
   }, [])
-
   
   return (
     <div className='feedbackDetails flex flex-col'>
@@ -35,7 +40,18 @@ function FeedbackDetails() {
         </Link>
       </div>
         <Feedback feedback={feedback}/>
-        <AddComment />
+
+      <div className='container comments-container flex flex-col'>
+        <h3>{comments.length} Comments</h3>
+        {comments.map((comments)=> {
+          return ( 
+            <Comment comments={comments} />
+          )}
+        )}
+      </div>
+        
+
+        <AddComment feedbackId={id} />
     </div>
   )
 }

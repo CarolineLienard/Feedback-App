@@ -37,7 +37,6 @@ function AddFeedback() {
 
   const handleCategory = (category) => {
     setCategory(category)
-    console.log(category);
   }
 
   function onSubmit(){

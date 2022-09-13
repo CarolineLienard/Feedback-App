@@ -1,0 +1,29 @@
+.comments-container {
+    padding: 2rem;
+    gap: 0.5rem;
+    .comments {
+        padding: 2rem 0;
+        border-bottom: 1px solid $border-color;
+        &:last-child {
+            border-bottom: none;
+        }
+        img {
+            border-radius: 100%;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        h6 {
+            line-height: 1.5rem;
+        }
+        span {
+            color: $medium-primary;
+            font-size: 13px;
+            font-weight: 600;
+            &:hover {
+                cursor: pointer;
+                filter: brightness(120%);
+            }
+        }
+    }
+}
+
