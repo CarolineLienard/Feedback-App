@@ -13,11 +13,14 @@ function RoadmapPage() {
   const [progress, setProgress ] = useState([])
   const [live, setLive ] = useState([])
 
- 
-  useEffect(() => {
+  function handleFeedbacks () {
     getFeedback().then(res => {
-      setFeedbacks(res)
+    setFeedbacks(res)
     })
+  }
+
+  useEffect(() => {
+    handleFeedbacks()
   }, [])
 
   useEffect(() => {
@@ -41,7 +44,7 @@ function RoadmapPage() {
 
           {planned.map((feedback)=> {
             return (
-              <StatusFeedback feedback={feedback}/>
+              <StatusFeedback refreshPost={handleFeedbacks} feedback={feedback}/>
             )
           })
         }
@@ -54,7 +57,7 @@ function RoadmapPage() {
           </div>
           {progress.map((feedback)=> {
             return (
-              <StatusFeedback feedback={feedback}/>
+              <StatusFeedback refreshPost={handleFeedbacks} feedback={feedback}/>
             )
           })
         }
@@ -67,7 +70,7 @@ function RoadmapPage() {
           </div>
           {live.map((feedback)=> {
             return (
-              <StatusFeedback feedback={feedback}/>
+              <StatusFeedback refreshPost={handleFeedbacks} feedback={feedback}/>
             )
           })
         }

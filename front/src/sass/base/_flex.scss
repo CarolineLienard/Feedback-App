@@ -4,6 +4,8 @@
     display: flex;
 }
 
+
+/* Justify */
 .justify-center {
     justify-content: center;
 }
@@ -16,10 +18,14 @@
     justify-content: space-between;
 }
 
+
+/* Align items */
 .align-center {
     align-items: center;
 }
 
+
+/* Flex direction */
 .flex-col {
     flex-direction: column;
 }
@@ -28,10 +34,14 @@
     flex-direction: row;
 }
 
+
+/* flex wrap */
 .wrap {
     flex-wrap: wrap;
 }
 
+
+/* Gap & width */
 .gap-0-5 {
     gap: 0.5rem;
 }

@@ -1,22 +1,31 @@
+/* Utils */
 @import "./utils/mixins";
 @import "./utils/variables";
 
+/* General */
 @import "./base/normalize";
 @import "./base/base";
 @import "./base/flex";
 @import "./base/button";
 @import "./base/typography";
 
-@import "./pages/app.scss";
-@import "./pages/addFeedback.scss";
-@import "./pages/feedbackDetails.scss";
+/* Pages */
+@import "./pages/app";
+@import "./pages/addFeedback";
+@import "./pages/feedbackDetails";
+@import './pages/roadmapPage';
 
-@import "./components/header.scss";
-@import "./components/category.scss";
-@import "./components/roadmap.scss";
-@import "./components/navbar.scss";
-@import "./components/feedback.scss";
+/* Components */
+@import "./components/header";
+@import "./components/category";
+@import "./components/roadmap";
+@import "./components/navbar";
+
 @import "./components/dropdownMenu";
-@import "./components/emptyFeedback.scss";
+
+@import "./components/feedback";
+@import "./components/emptyFeedback";
 @import "./components/statusFeedback";
+
 @import "./components/comment";
+@import "./components/addComment";
