@@ -24,7 +24,7 @@ function FeedbackDetails() {
     getOwnedComment(id).then(res => {
       setComments(res)
     })
-  }, [])
+  }, [id])
   
   return (
     <div className='feedbackDetails flex flex-col'>
@@ -32,7 +32,7 @@ function FeedbackDetails() {
         <div className='flex align-center gap-0-8'>
             <img src={backIcon} alt="" />
             <Link to={-1}>
-              <h4>Go Back</h4>
+              <h4 className='button-back'>Go Back</h4>
             </Link>
         </div>   
         <Link to={`/editFeedback/${id}`}>
@@ -43,9 +43,11 @@ function FeedbackDetails() {
 
       <div className='container comments-container flex flex-col'>
         <h3>{comments.length} Comments</h3>
-        {comments.map((comments)=> {
+        {comments.map((comments, index )=> {
           return ( 
-            <Comment comments={comments} />
+            <div key={index}>
+              <Comment comments={comments} />
+            </div>
           )}
         )}
       </div>

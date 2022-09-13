@@ -42,19 +42,12 @@ h6 {
 p {
     font-size: 16px;
     font-weight: 400;
+    line-height: 1.4rem;
     color: $medium-secondary;
 }
 
 a {
     text-decoration: none;
-}
-
-.view-link {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: -0.2px;
-    text-decoration: underline;
-    color: $medium-primary;
 }
 
 span {

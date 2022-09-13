@@ -6,10 +6,11 @@ import Snackbar from '@mui/material/Snackbar'
 import Alert from '@mui/material/Alert'
 
 
-function AddComment({feedbackId}) {
+function AddComment({feedbackId, refreshPost}) {
 
   const [comment, setComment] = useState('')
   const [openSnackBar, setOpenSnackBar] = useState(false)
+  const [count, setCount] = useState(0);
 
   function handleSnackBar(){
     return(
@@ -46,10 +47,11 @@ function AddComment({feedbackId}) {
             <textarea 
               placeholder='Type your comment here' 
               rows={5} 
-              onChange={(e)=> setComment(e.target.value)}
+              maxLength="250"
+              onChange={(e)=> {setComment(e.target.value); setCount(e.target.value.length)}}
             />
             <div className='flex align-center between'>
-                <p>250 characters left</p>
+                <p>{250 - count} characters left</p>
                 <button className='button-purple' onClick={onSubmit}>Post Comment</button>
             </div>
         </div>

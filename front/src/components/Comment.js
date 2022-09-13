@@ -12,11 +12,11 @@ function Comment({comments}) {
                     <h4>Elijah Moss</h4>
                     <div className='flex between'>
                         <h6>@hexagon.bestagon</h6>
-                        <span>Reply</span>
+                        <span className='button-back'>Reply</span>
                     </div>
                 </div>
                
-                <div>
+                <div className='comment-content'>
                     <p>{comments.content}</p>
                 </div>
             </div>

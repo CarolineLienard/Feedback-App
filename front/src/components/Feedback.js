@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from 'react'
 
+import { getOwnedComment } from '../API/feedback_comments'
+
 import LikeButton from './LikeButton'
 import commentIcon from "../assets/icons/others/icon-comments.svg"
 
 
 function Feedback({feedback, refreshPost}) {
+    const [comments, setComments] = useState([])
+
+    useEffect(() => {
+        getOwnedComment(feedback.id).then(res => {
+          setComments(res)
+        })
+      }, [feedback])
+
     return (
         <div key={feedback.id} className="feedback container flex align-center between">      
             <div className="feedback__title flex">
@@ -22,7 +32,7 @@ function Feedback({feedback, refreshPost}) {
                 <div>
                     <img src={commentIcon} alt=""/>
                 </div>
-                <span>{feedback.comments}</span>
+                <span>{comments.length}</span>
             </div>
         </div>
     )

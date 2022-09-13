@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import { useParams, useNavigate } from "react-router-dom"
 
 import { getOneFeedback, updateFeedback, deleteFeedback } from '../API/feedback'
-import { deleteOwnedComment } from '../API/feedback_comments'
 
 import MenuDrop from '../components/menu-drop/MenuDrop'
 import {CATEGORIES, STATUS} from '../components/menu-drop/data'
@@ -39,7 +38,7 @@ function EditFeedback() {
           setStatus(res.status)
         }
     })
-  }, [])
+  }, [id])
 
   function handleSnackBar(){
     return(

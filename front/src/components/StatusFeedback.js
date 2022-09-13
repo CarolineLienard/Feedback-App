@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+
+import { getOwnedComment } from '../API/feedback_comments'
 
 import LikeButton from './LikeButton'
 
@@ -10,8 +12,15 @@ import commentIcon from "../assets/icons/others/icon-comments.svg"
 
 
 function StatusFeedback({feedback, refreshPost}) {
+    const [comments, setComments] = useState([])
     const isPlanned = feedback.status === "Planned"
     const isProgress = feedback.status === "In Progress"
+
+    useEffect(() => {
+        getOwnedComment(feedback.id).then(res => {
+          setComments(res)
+        })
+      }, [feedback])
 
   return (
     <div style={{borderTopColor: isPlanned ? "#F49F85" : isProgress ? "#AD1FEA" : "#62BCFA" }} className='statusFeedback flex flex-col gap-0-8'>
@@ -39,7 +48,7 @@ function StatusFeedback({feedback, refreshPost}) {
                     <div>
                         <img src={commentIcon} alt=""/>
                     </div>
-                    <span>{feedback.comments}</span>
+                    <span className={comments.length === 0 ? 'comment-off' : null } >{comments.length === 0 ? '0' : comments.length}</span>
                 </div>
             </div>
         </div>

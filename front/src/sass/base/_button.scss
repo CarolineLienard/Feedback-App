@@ -1,6 +1,5 @@
 /* Button */
 
-
 /* General */
 button {
     border-radius: 10px;
@@ -15,7 +14,7 @@ button {
     font-weight: 700;
     font-size: 14px;
     &:hover {
-        filter: brightness(120%);
+        opacity: 0.7;
         cursor: pointer;
     }
 }
@@ -25,7 +24,7 @@ button {
     font-weight: 700;
     font-size: 14px;
     &:hover {
-        filter: brightness(120%);
+        opacity: 0.7;
         cursor: pointer;
     }
 }
@@ -35,7 +34,7 @@ button {
     font-weight: 700;
     font-size: 14px;
     &:hover {
-        filter: brightness(120%);
+        opacity: 0.7;
         cursor: pointer;
     }
 }
@@ -45,7 +44,7 @@ button {
     font-weight: 700;
     font-size: 14px;
     &:hover {
-        filter: brightness(120%);
+        opacity: 0.7;
         cursor: pointer;
     }
 }
@@ -54,6 +53,18 @@ button {
     &:hover{
         text-decoration: underline;
         cursor: pointer;
+        opacity: 0.8;
+    }
+}
+
+.button-view {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    text-decoration: underline;
+    color: $medium-primary;
+    &:hover {
+        opacity: 0.7;
     }
 }
 

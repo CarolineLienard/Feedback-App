@@ -13,6 +13,12 @@
     cursor: pointer;
 }
 
+.select-most {
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
 .caret-rotate {
     transform: rotate(180deg);
 }

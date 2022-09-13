@@ -4,6 +4,9 @@
     .comments {
         padding: 2rem 0;
         border-bottom: 1px solid $border-color;
+        .comment-content {
+            width: 95%;
+        }
         &:last-child {
             border-bottom: none;
         }
@@ -19,10 +22,6 @@
             color: $medium-primary;
             font-size: 13px;
             font-weight: 600;
-            &:hover {
-                cursor: pointer;
-                filter: brightness(120%);
-            }
         }
     }
 }

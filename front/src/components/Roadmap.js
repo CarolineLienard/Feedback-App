@@ -7,7 +7,7 @@ function Roadmap({plannedLength, liveLength, progressLength}) {
         <div className='flex align-center between'>
             <h3>Roadmap</h3>
             <Link to="/roadmap">
-                <a className='view-link' href="">View</a>
+                <p className='button-view' href="">View</p>
             </Link>
         </div>
 

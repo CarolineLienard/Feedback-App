@@ -6,7 +6,7 @@ import chevronDown from '../assets/icons/arrow/icon-arrow-down.svg'
 function FilterDropMenu() {
   
     const [selected, setSelected] = useState('')
-    const [select, setSelect] = useState('')
+    const [, setSelect] = useState('')
     const [caret, setCaret] = useState('')
     const [menu, setMenu] = useState('')
     const [options, setOptions] = useState('')
@@ -44,7 +44,7 @@ function FilterDropMenu() {
                 })
             })
         }
-    }, [options])
+    })
 
     function handleDropDown () {
         caret.classList.toggle('caret-rotate')
@@ -61,7 +61,7 @@ function FilterDropMenu() {
   
     <div className='filterDrop'>
         <div className="dropdown">
-            <div onClick={handleDropDown} className="select flex align-center gap-0-5">
+            <div onClick={handleDropDown} className="select select-most flex align-center gap-0-5">
                 <p>Sort by : </p>
                 <span className='selected'>Most Upvotes</span>
                 <div className="caret flex align-center"><img src={chevronDown} alt=""/></div>
