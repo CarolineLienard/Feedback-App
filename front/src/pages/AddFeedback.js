@@ -28,9 +28,9 @@ function AddFeedback() {
         onClose={() => setOpenSnackBar(false)}>
             <Alert 
             variant="filled"
-            sx={{ bgcolor: '#373F68'}}
+            sx={{ bgcolor: '#4661E6'}}
             severity= "info"
-            > Merci de remplir tous les champs</Alert>
+            > Sorry, it can't be empty !</Alert>
         </Snackbar>
     )
   }

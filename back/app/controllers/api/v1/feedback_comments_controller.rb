@@ -25,7 +25,7 @@ class Api::V1::FeedbackCommentsController < ApplicationController
     @feedback_comment = FeedbackComment.new(feedback_comment_params)
 
     if @feedback_comment.save
-      render json: @feedback_comment, status: :created, location: @feedback_comment
+      render json: @feedback_comment, status: :created, location: api_v1_feedback_url(@feedback_comment)
     else
       render json: @feedback_comment.errors, status: :unprocessable_entity
     end

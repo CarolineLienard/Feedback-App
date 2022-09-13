@@ -94,7 +94,7 @@ function RoadmapPage() {
           <h1>Roadpmap</h1>
         </div>
         <Link to={'/addFeedback'}>
-          <button className='button-purple'>+ Add Feedback</button>
+          <button className='button-purple-dark'>+ Add Feedback</button>
         </Link>
       </div>
       {planned.length === 0 && live.length === 0 && progress.length === 0 ? <EmptyFeedback /> : renderContent()}

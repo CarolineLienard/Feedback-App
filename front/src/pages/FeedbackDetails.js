@@ -17,13 +17,17 @@ function FeedbackDetails() {
   const [feedback, setFeedback] = useState('')
   const [comments, setComments] = useState([])
   
-  useEffect(() => {
+  function handleFeedback () {
     getOneFeedback(id).then(res => {
-        setFeedback(res)
-    })
+      setFeedback(res)
+  })
     getOwnedComment(id).then(res => {
       setComments(res)
     })
+  }
+
+  useEffect(() => {
+    handleFeedback()
   }, [id])
   
   return (
@@ -45,14 +49,12 @@ function FeedbackDetails() {
         <h3>{comments.length} Comments</h3>
         {comments.map((comments, index )=> {
           return ( 
-            <div key={index}>
-              <Comment comments={comments} />
-            </div>
+              <Comment key={index} comments={comments} />
           )}
         )}
       </div>
         
-        <AddComment feedbackId={id} />
+        <AddComment refreshPost={handleFeedback} feedbackId={id} />
     </div>
   )
 }

@@ -22,7 +22,7 @@ function NavBar({suggestCount}) {
       </div>  
 
       <Link to={'/addFeedback'}>
-        <button className='button-purple flex align-center gap-0-5'>
+        <button className='button-purple-dark flex align-center gap-0-5'>
             <h4>+ Add Feeback</h4>
         </button>     
       </Link>

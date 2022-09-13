@@ -19,6 +19,16 @@ button {
     }
 }
 
+.button-purple-dark {
+    background-color: $accent-primary;
+    font-weight: 700;
+    font-size: 14px;
+    &:hover {
+        filter: brightness(115%);
+        cursor: pointer;
+    }
+}
+
 .button-dark {
     background-color: $dark-secondary;
     font-weight: 700;
@@ -116,7 +126,7 @@ button {
     background-color: $medium-background-secondary;
     border-radius: 10px;
     padding: 0.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     gap: 0.2rem;
     width: 2.8rem;
     &:hover {

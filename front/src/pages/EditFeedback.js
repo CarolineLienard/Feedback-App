@@ -48,9 +48,9 @@ function EditFeedback() {
         onClose={() => setOpenSnackBar(false)}>
             <Alert 
             variant="filled"
-            sx={{ bgcolor: '#373F68'}}
+            sx={{ bgcolor: '#4661E6'}}
             severity= "info"
-            > Merci de remplir tous les champs</Alert>
+            > Sorry, it can't be empty !</Alert>
         </Snackbar>
     )
   }
@@ -87,7 +87,7 @@ function EditFeedback() {
       <div className='flex align-center gap-0-8'>
         <img src={backIcon} alt="" />
         <Link to={-1}>
-          <h4>Go Back</h4>
+          <h4 className='button-back'>Go Back</h4>
         </Link>
       </div>
 
@@ -106,6 +106,7 @@ function EditFeedback() {
             </div>
             <input
               value={title}
+              maxLength="25"
               onChange={(e)=> setTitle(e.target.value)}
             />
           </div>
@@ -137,6 +138,7 @@ function EditFeedback() {
             <textarea
               rows={4}
               value={body}
+              maxLength={60}
               onChange={(e)=> setBody(e.target.value) }
             />
           </div>

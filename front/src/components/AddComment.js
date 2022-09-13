@@ -20,9 +20,9 @@ function AddComment({feedbackId, refreshPost}) {
         onClose={() => setOpenSnackBar(false)}>
             <Alert 
             variant="filled"
-            sx={{ bgcolor: '#373F68'}}
+            sx={{ bgcolor: '#4661E6'}}
             severity= "info"
-            > Veuillez écrire votre commentaire</Alert>
+            > Sorry, it can't be empty !</Alert>
         </Snackbar>
     )
   }
@@ -33,7 +33,7 @@ function AddComment({feedbackId, refreshPost}) {
         feedback_id: feedbackId, 
         content : comment
       }
-      addFeedbackComment(data).then()
+      addFeedbackComment(data).then(() => refreshPost(), setComment(''), setCount(0))
     } else {
       setOpenSnackBar(true)
     }
@@ -48,6 +48,7 @@ function AddComment({feedbackId, refreshPost}) {
               placeholder='Type your comment here' 
               rows={5} 
               maxLength="250"
+              value={comment}
               onChange={(e)=> {setComment(e.target.value); setCount(e.target.value.length)}}
             />
             <div className='flex align-center between'>
