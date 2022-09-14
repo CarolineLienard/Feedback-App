@@ -22,7 +22,7 @@ header {
     @include mobile-only {
         background-image: url('../../assets/mobile/background-header.png');
         border-radius: 0;
-        padding: 1.5rem 1.5rem 1rem 1.5rem;
+        padding: 1rem 1.5rem 1rem 1.5rem;
         background-size: cover;
         position: relative;
         z-index: 2;
