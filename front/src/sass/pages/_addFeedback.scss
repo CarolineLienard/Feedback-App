@@ -1,6 +1,9 @@
 .addFeedback {
     padding: 4rem 29rem;
     gap: 3.5rem;
+    @include mobile-only {
+        padding: 1.5rem;
+    }
     p {
         font-size: 14px;
     }

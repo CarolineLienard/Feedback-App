@@ -1,4 +1,12 @@
 .feedbackDetails {
     padding: 4rem 20rem;
     gap: 1.5rem;
+    @include mobile-only {
+        padding: 1.5rem;
+    }
+    .feedback {
+        @include mobile-only {
+            margin: 0;
+        }
+    }
 }

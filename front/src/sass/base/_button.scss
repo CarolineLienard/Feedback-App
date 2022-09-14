@@ -2,6 +2,7 @@
 
 /* General */
 button {
+    font-size: 14px;
     border-radius: 10px;
     border: none;
     padding: 0.8rem 1.8rem;
@@ -9,6 +10,7 @@ button {
     cursor: pointer;
     @include mobile-only {
         padding: 0.8rem 1rem;
+        font-size: 13px;
     }
 }
 

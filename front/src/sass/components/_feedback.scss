@@ -10,6 +10,11 @@
         span {
             font-size: 13px;
         }
+        h3 {
+            @include mobile-only {
+                font-size: 13px;
+            }
+        }
         @include mobile-only {
             flex-direction: column-reverse;
             gap: 1rem;
@@ -17,5 +22,10 @@
     }
     &__comment {
         padding-right: 1rem;
+        @include mobile-only {
+            position: absolute;
+            bottom: 2.3rem;
+            right: 1.5rem;
+        }
     }
 }

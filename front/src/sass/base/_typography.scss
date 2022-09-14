@@ -40,6 +40,9 @@ h6 {
     font-size: 14px;
     font-weight: 400;
     color: $medium-secondary;
+    @include mobile-only {
+        font-size: 13px;
+    }
 }
 
 p {
@@ -60,4 +63,7 @@ span {
     font-size: 16px;
     font-weight: 700;
     color: $dark-secondary;
+    @include mobile-only {
+        font-size: 13px;
+    }
 }

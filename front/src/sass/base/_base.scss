@@ -24,5 +24,9 @@ input, textarea {
     resize: none;
     padding: 1rem;
     color: $dark-secondary;
+    font-size: 15px;
+    @include mobile-only {
+        font-size: 13px;
+    }
     
 }

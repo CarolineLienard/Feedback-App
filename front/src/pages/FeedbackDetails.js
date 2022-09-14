@@ -43,7 +43,10 @@ function FeedbackDetails() {
           <button className='button-blue'>Edit Feedback</button>
         </Link>
       </div>
+
+      <div className='full'>
         <Feedback feedback={feedback}/>
+      </div>
 
       <div className='container comments-container flex flex-col'>
         <h3>{comments.length} Comments</h3>
