@@ -68,9 +68,11 @@ function App() {
   return (
     <main className='flex'>
       <div className='headerContainer flex flex-col'>
-        <Header />
-        <Category />
-        <Roadmap liveLength={live.length} progressLength={progress.length} plannedLength={planned.length} />
+        <Header liveLength={live.length} progressLength={progress.length} plannedLength={planned.length}/>
+        <div className='header-menu flex flex-col gap-1-5'>
+          <Category />
+          <Roadmap liveLength={live.length} progressLength={progress.length} plannedLength={planned.length} />
+        </div>
       </div>
 
       <div className='feedbackContainer flex flex-col'>

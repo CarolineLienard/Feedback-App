@@ -4,7 +4,7 @@ import Feedback from "./Feedback"
 
 function Feedbacks ({feedbacks, refreshPost}) {
     return (
-        <div className="flex flex-col gap-1-5">
+        <div className="feedbacks flex flex-col">
             {feedbacks.map((feedback)=> {
                 return ( 
                     <Link to={`/feedbackDetails/${feedback.id}`} key={feedback.id}>

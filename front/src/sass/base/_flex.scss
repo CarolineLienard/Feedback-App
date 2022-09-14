@@ -41,7 +41,7 @@
 }
 
 
-/* Gap & width */
+/* Gap & width & others */
 .gap-0-5 {
     gap: 0.5rem;
 }
@@ -60,4 +60,8 @@
 
 .full {
     width: 100%;
+}
+
+.none {
+    display: none;
 }

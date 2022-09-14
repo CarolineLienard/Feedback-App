@@ -8,10 +8,10 @@ import bubbleIcon from "../assets/icons/others/icon-suggestions.svg"
 function NavBar({suggestCount}) {
 
   return (
-    <div className='navBar flex align-center gap-1 between'>
+    <div className='navBar flex wrap align-center gap-1 between'>
       
       <div className='navBar__suggestion flex align-center'>
-        <div className='flex align-center gap-0-8'>
+        <div className='suggestion-title flex align-center gap-0-8'>
           <img src={bubbleIcon} alt="" />
           <span>{suggestCount} Suggestions</span>
         </div>
