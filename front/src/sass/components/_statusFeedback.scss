@@ -3,6 +3,9 @@
     border-radius: 5px;
     border-top: 0.4rem solid $accent-secondary;
     padding: 1.5rem 1.5rem 2rem 2rem;
+    @include ipad-only {
+        padding: 1rem;
+    }
     .small-container {
         margin-bottom: 0;
     }

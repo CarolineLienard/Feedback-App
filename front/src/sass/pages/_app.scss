@@ -1,6 +1,9 @@
 main {
     padding: 5rem 8rem;
     gap: 1.5rem;
+    @include small-desktop-only {
+        padding: 3rem;
+    }
     @include ipad-only {
         flex-direction: column;
         padding: 2rem;

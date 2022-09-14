@@ -1,6 +1,12 @@
 .addFeedback {
     padding: 4rem 29rem;
     gap: 3.5rem;
+    @include small-desktop-only {
+        padding: 4rem 20rem;
+    }
+    @include ipad-only {
+        padding: 5rem;
+    }
     @include mobile-only {
         padding: 1.5rem;
     }

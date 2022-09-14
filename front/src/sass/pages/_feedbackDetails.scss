@@ -1,6 +1,12 @@
 .feedbackDetails {
     padding: 4rem 20rem;
     gap: 1.5rem;
+    @include small-desktop-only {
+        padding: 4rem 14rem;
+    }
+    @include ipad-only {
+        padding: 5rem;
+    }
     @include mobile-only {
         padding: 1.5rem;
     }

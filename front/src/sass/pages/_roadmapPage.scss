@@ -1,6 +1,12 @@
 .roadmapPage {
     padding: 3rem 8rem;
     gap: 2.5rem;
+    @include small-desktop-only {
+        padding: 3rem 5rem;
+    }
+    @include ipad-only {
+        padding: 2rem;
+    }
     @include mobile-only {
         padding: 0;
         gap: 0rem;
@@ -18,11 +24,15 @@
     }
     .roadmapContainer {
         gap: 2rem;
+        @include ipad-only {
+            gap: 1rem
+        }
         @include mobile-only {
             flex-direction: column
         }
         .statusCol {
             gap: 1.8rem;
+            width: 100%;
             @include mobile-only {
                 justify-content: center;
                 margin: 0 2rem;

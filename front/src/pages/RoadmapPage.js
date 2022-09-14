@@ -57,7 +57,7 @@ function RoadmapPage() {
   
   function renderContent() {
     return (
-      <div className='roadmapContainer flex'>
+      <div className='roadmapContainer flex justify-center'>
 
         <div className='roadmapMobileMenu flex gap-1'>
           <ul className='mobileMenuContainer'>

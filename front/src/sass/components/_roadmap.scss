@@ -2,4 +2,7 @@
     @include ipad-only {
         width: 100%;
     }
+    @include mobile-only {
+        width: auto;
+    }
 }

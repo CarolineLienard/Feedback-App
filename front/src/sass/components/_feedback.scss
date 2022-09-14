@@ -10,11 +10,6 @@
         span {
             font-size: 13px;
         }
-        h3 {
-            @include mobile-only {
-                font-size: 13px;
-            }
-        }
         @include mobile-only {
             flex-direction: column-reverse;
             gap: 1rem;
