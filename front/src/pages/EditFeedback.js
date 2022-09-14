@@ -71,7 +71,7 @@ function EditFeedback() {
         category: category,
         status: status
       }
-      updateFeedback(id, data).then(() => navigate('/'))
+      updateFeedback(id, data).then(() => navigate(-1))
     } else {
         setOpenSnackBar(true)
     }
@@ -144,13 +144,13 @@ function EditFeedback() {
           </div>
         </div>
        
-        <div className='flex gap-1 between'>
+        <div className='addFeedback-button flex gap-1 between'>
             <button className='button-delete' onClick={handleDelete}>Delete</button>
-            <div className='flex gap-1'>
+            <div className='addFeedback-button flex gap-1'>
                 <Link to={'/'}>
                     <button className='button-dark'>Cancel</button>
                 </Link>  
-                <button className='button-purple' onClick={update}>Edit FeedBack</button>
+                <button className='button-purple' onClick={update}>Save Changes</button>
             </div>
         </div>
       </div>

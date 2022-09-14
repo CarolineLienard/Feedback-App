@@ -6,6 +6,17 @@
     .small-container {
         margin-bottom: 0;
     }
+    .status-comment {
+        @include mobile-only {
+            position: relative;
+        }
+        .feedback__comment {
+            @include mobile-only {
+                top: 1.2rem;
+                right: -0.2rem;
+            }
+        }
+    }
     h3 {
         &:hover {
             color: $medium-primary;

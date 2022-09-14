@@ -40,7 +40,7 @@ function StatusFeedback({feedback, refreshPost}) {
                 <p className="filter">{feedback.category}</p>
             </div>
 
-            <div className='flex align-center between'>
+            <div className='status-comment flex align-center between'>
 
                 <LikeButton isRow={true} refreshPost={refreshPost} feedback={feedback}/>
 

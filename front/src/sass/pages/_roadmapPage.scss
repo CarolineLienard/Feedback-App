@@ -1,19 +1,96 @@
 .roadmapPage {
     padding: 3rem 8rem;
     gap: 2.5rem;
+    @include mobile-only {
+        padding: 0;
+        gap: 0rem;
+    }
     .roadmapHeader {
         background-color: $dark-secondary;
         border-radius: 10px;
         padding: 1.5rem 2rem;
+        @include mobile-only {
+            border-radius: 0;
+        }
         h1, h4 {
             color: $light-primary;
         }
     }
     .roadmapContainer {
         gap: 2rem;
+        @include mobile-only {
+            flex-direction: column
+        }
         .statusCol {
             gap: 1.8rem;
-            width: 100%;
+            @include mobile-only {
+                justify-content: center;
+                margin: 0 2rem;
+            }
         }
+    }
+}
+
+.roadmapMobileMenu {
+    display: none;
+    @include mobile-only {
+        display: flex;
+        justify-content: center;
+    }
+    .mobileMenuContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        li {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border-bottom: 1px solid $border-color;
+            &:nth-child(1) {
+                &:hover {
+                    border-bottom: 3px solid $accent-secondary;
+                }
+            }
+            &:nth-child(2) {
+                &:hover {
+                    border-bottom: 3px solid $accent-primary;
+                }
+            }
+            &:nth-child(3) {
+                &:hover {
+                    border-bottom: 3px solid $accent-third;
+                }
+            }
+            span {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1.3rem 0rem;
+            }
+        }
+    }
+}
+
+
+.planned-col {
+    @include mobile-only {
+        display: none;
+    }
+}
+
+.live-col {
+    @include mobile-only {
+        display: none;
+    }
+}
+
+.progress-col {
+    @include mobile-only {
+        display: none;
     }
 }

@@ -23,3 +23,10 @@
         }
     }
 }
+
+.mobileEmpty {
+    display: none; 
+    @include mobile-only {
+        display: inherit;
+    }
+}

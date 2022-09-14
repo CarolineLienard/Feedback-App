@@ -106,7 +106,7 @@ function AddFeedback() {
           </div>
         </div>
        
-        <div className='flex gap-1 justify-end'>
+        <div className='addFeedback-button flex gap-1 justify-end'>
           <Link to={'/'}>
             <button className='button-dark'>Cancel</button>
           </Link>  

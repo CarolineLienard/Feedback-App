@@ -13,6 +13,29 @@ function RoadmapPage() {
   const [progress, setProgress ] = useState([])
   const [live, setLive ] = useState([])
 
+  const [plannedCol, setPlannedCol] = useState(true)
+  const [progressCol, setProgressCol] = useState(false)
+  const [liveCol, setLiveCol] = useState(false)
+
+
+  function handlePlanned () {
+    setPlannedCol(true)
+    setProgressCol(false)
+    setLiveCol(false)
+  }
+
+  function handleProgress () {
+    setPlannedCol(false)
+    setProgressCol(true)
+    setLiveCol(false)
+  }
+
+  function handleLive () {
+    setPlannedCol(false)
+    setProgressCol(false)
+    setLiveCol(true)
+  }
+
   function handleFeedbacks () {
     getFeedback().then(res => {
     setFeedbacks(res)
@@ -36,12 +59,28 @@ function RoadmapPage() {
     return (
       <div className='roadmapContainer flex'>
 
-        <div className='statusCol flex flex-col'>
+        <div className='roadmapMobileMenu flex gap-1'>
+          <ul className='mobileMenuContainer'>
+            <li onClick={handlePlanned}>
+              <span>Planned ({planned.length})</span>
+            </li>
+            <li onClick={handleProgress}>
+              <span>In Progress ({progress.length})</span>
+            </li>
+            <li onClick={handleLive}>
+              <span>Live ({live.length})</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className={ plannedCol ? 'statusCol flex flex-col' : 'planned-col statusCol flex flex-col' }>
           <div>
             <h3>Planned ({planned.length})</h3>
             <p>Ideas prioritized for research</p>
           </div>
-
+          <div className={planned.length === 0 ? 'mobileEmpty' : 'none'}>
+              <EmptyFeedback />
+          </div>
           {planned.map((feedback)=> {
             return (
               <StatusFeedback refreshPost={handleFeedbacks} feedback={feedback}/>
@@ -50,10 +89,13 @@ function RoadmapPage() {
         }
         </div>
 
-        <div className='statusCol flex flex-col'>
+        <div className={ progressCol ? 'statusCol flex flex-col' : 'progress-col statusCol flex flex-col' }>
           <div>
             <h3>In-Progress ({progress.length})</h3>
-            <p>Ideas prioritized for research</p>
+            <p>Currently being developed</p>
+          </div>
+          <div className={ progress.length === 0 ? 'mobileEmpty' : 'none'}>
+              <EmptyFeedback />
           </div>
           {progress.map((feedback)=> {
             return (
@@ -63,10 +105,13 @@ function RoadmapPage() {
         }
         </div>
 
-        <div className='statusCol flex flex-col'>
+        <div className={ liveCol ? 'statusCol flex flex-col' : 'live-col statusCol flex flex-col' }>
           <div>
             <h3>Live ({live.length})</h3>
-            <p>Ideas prioritized for research</p>
+            <p>Released features</p>
+          </div>
+          <div className={live.length === 0 ? 'mobileEmpty' : 'none'}>
+              <EmptyFeedback />
           </div>
           {live.map((feedback)=> {
             return (
