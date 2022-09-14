@@ -1,6 +1,10 @@
 main {
     padding: 5rem 8rem;
     gap: 1.5rem;
+    @include ipad-only {
+        flex-direction: column;
+        padding: 2rem;
+    }
     @include mobile-only {
         flex-direction: column;
         padding: 0;
@@ -9,10 +13,17 @@ main {
     .headerContainer {
         gap: 1.5rem;
         width: 28%;
+        @include ipad-only {
+        flex-direction: row;
+        width: 100%;
+        }
         @include mobile-only {
             width: 100%;
         }
         .header-menu {
+            @include ipad-only {
+                flex-direction: row;
+            }
             @include mobile-only {
                 display: none;
             }

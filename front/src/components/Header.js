@@ -13,7 +13,7 @@ function Header({plannedLength, liveLength, progressLength}) {
   }
 
   return (
-    <div>
+    <div className='header'>
       <header className='flex align-center between'>
         <div className='flex flex-col'>
           <h2>Aston Digital</h2>

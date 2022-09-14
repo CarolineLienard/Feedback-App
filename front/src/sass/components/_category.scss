@@ -1,0 +1,5 @@
+.category {
+    @include ipad-only {
+        width: 100%;
+    }
+}

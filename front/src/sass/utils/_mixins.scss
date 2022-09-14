@@ -6,7 +6,7 @@
     }
 }
 
-@mixin small-device-only {
+@mixin ipad-only {
     @media screen and (max-width: map-get($breakpoints, small-device)){
         @content;
     }

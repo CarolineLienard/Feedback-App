@@ -1,9 +1,21 @@
+.header {
+    @include ipad-only {
+        width: 40%;
+        height: 100%;
+    }
+}
+
 header {
     background-image: url(../../assets/illustration/background-header.png);
     background-repeat: no-repeat;
     padding: 4rem 1.5rem 1.5rem 1.5rem;
     gap: 0.2rem;
     border-radius: 10px;
+    @include ipad-only {
+       background-image: url('../../assets/illustration/background-header\ 2-ipad.png');
+       padding: 7.3rem 1.5rem 1.5rem 1.5rem;
+       background-size: cover;
+    }
     @include mobile-only {
         background-image: url('../../assets/mobile/background-header.png');
         border-radius: 0;
