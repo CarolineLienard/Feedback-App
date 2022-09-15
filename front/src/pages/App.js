@@ -21,41 +21,35 @@ function App() {
   const [progress, setProgress ] = useState([])
   const [live, setLive ] = useState([])
 
-  function handleFeedbacks () {
-    getFeedback().then((items) => {
-      let arrayList = []
-      if (feedbackFilter === "mostVotes") {
-        arrayList = items.sort((a, b) => b.likes - a.likes)
-        setFeedbacks(arrayList)
-      }else if(feedbackFilter === "leastVotes"){
-        arrayList = items.sort((a, b) => a.likes - b.likes)
-        setFeedbacks(arrayList)
-      }else if(feedbackFilter === "mostComments"){
-        arrayList = items.sort((a, b) => b.comments - a.comments)
-        setFeedbacks(arrayList)
-      }else if(feedbackFilter === "leastComments"){
-        arrayList = items.sort((a, b) => a.comments - b.comments)
-        setFeedbacks(arrayList)
-      }
-    })
+  function handleFeedbacks (items) {
+    let arrayList = []
+    if (feedbackFilter === "mostVotes") {
+      arrayList = items.sort((a, b) => b.likes - a.likes)
+      setFeedbacks(arrayList)
+    }else if(feedbackFilter === "leastVotes"){
+      arrayList = items.sort((a, b) => a.likes - b.likes)
+      setFeedbacks(arrayList)
+    }else if(feedbackFilter === "mostComments"){
+      arrayList = items.sort((a, b) => b.comments - a.comments)
+      setFeedbacks(arrayList)
+    }else if(feedbackFilter === "leastComments"){
+      arrayList = items.sort((a, b) => a.comments - b.comments)
+      setFeedbacks(arrayList)
+    }
   }
-
-  useEffect(() => {
-    handleFeedbacks()
-  }, [feedbackFilter])
-
 
   useEffect(() => {
     if (categoryFilter === "All") {
       getFeedback().then((items) => {
-        setFeedbacks(items) 
+        handleFeedbacks(items)
       }) 
     } else {
       getFilterCategory(categoryFilter).then((items) => {
-      setFeedbacks(items)
+        handleFeedbacks(items)  
       })
-    }  
-  }, [categoryFilter])
+    }
+  
+  }, [categoryFilter, feedbackFilter])
 
   useEffect(() => {
     const arrayPlanned =  feedbacks.filter((el) => el.status === 'Planned')
