@@ -20,7 +20,7 @@ function FeedbackDetails() {
 
   function update(){
       const data = {
-        comments : +1
+        comments : feedback.comments + 1
       }
       updateFeedback(id, data).then()
   }
