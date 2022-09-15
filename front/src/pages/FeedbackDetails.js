@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 
-import { getOneFeedback } from '../API/feedback'
+import { getOneFeedback, updateFeedback } from '../API/feedback'
 import { getOwnedComment } from '../API/feedback_comments'
 
 import Feedback from '../components/Feedback'
@@ -17,6 +17,14 @@ function FeedbackDetails() {
   const [feedback, setFeedback] = useState('')
   const [comments, setComments] = useState([])
   
+
+  function update(){
+      const data = {
+        comments : +1
+      }
+      updateFeedback(id, data).then()
+  }
+
   function handleFeedback () {
     getOneFeedback(id).then(res => {
       setFeedback(res)
@@ -24,6 +32,7 @@ function FeedbackDetails() {
     getOwnedComment(id).then(res => {
       setComments(res)
     })
+    update()
   }
 
   useEffect(() => {

@@ -57,18 +57,18 @@ function RoadmapPage() {
   
   function renderContent() {
     return (
-      <div className='roadmapContainer flex justify-center'>
+      <div className='roadmapContainer flex'>
 
         <div className='roadmapMobileMenu flex gap-1'>
           <ul className='mobileMenuContainer'>
             <li onClick={handlePlanned}>
-              <span>Planned ({planned.length})</span>
+              <span className={ plannedCol ? '' : 'menu-li-unselect' }>Planned ({planned.length})</span>
             </li>
             <li onClick={handleProgress}>
-              <span>In Progress ({progress.length})</span>
+              <span className={ progressCol ? '' : 'menu-li-unselect' }>In Progress ({progress.length})</span>
             </li>
             <li onClick={handleLive}>
-              <span>Live ({live.length})</span>
+              <span className={ liveCol ? '' : 'menu-li-unselect' }>Live ({live.length})</span>
             </li>
           </ul>
         </div>

@@ -100,7 +100,7 @@ function AddFeedback() {
               <p>Include any specific comments on what should be improved, added, etc.</p>
             </div>
             <textarea
-              maxLength={60}
+              maxLength={70}
               onChange={(e)=> setBody(e.target.value) }
             />
           </div>

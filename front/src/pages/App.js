@@ -44,6 +44,7 @@ function App() {
     handleFeedbacks()
   }, [feedbackFilter])
 
+
   useEffect(() => {
     if (categoryFilter === "All") {
       getFeedback().then((items) => {

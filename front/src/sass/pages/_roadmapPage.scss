@@ -24,11 +24,13 @@
     }
     .roadmapContainer {
         gap: 2rem;
+        justify-content: space-between;
         @include ipad-only {
-            gap: 1rem
+            gap: 1rem;
         }
         @include mobile-only {
-            flex-direction: column
+            flex-direction: column;
+            gap: 2rem;
         }
         .statusCol {
             gap: 1.8rem;
@@ -36,6 +38,7 @@
             @include mobile-only {
                 justify-content: center;
                 margin: 0 2rem;
+                width: auto;
             }
         }
     }
@@ -84,6 +87,10 @@
             }
         }
     }
+}
+
+.menu-li-unselect {
+    opacity: 0.4;
 }
 
 
