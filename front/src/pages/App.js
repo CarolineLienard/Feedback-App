@@ -39,6 +39,10 @@ function App() {
   }
 
   useEffect(() => {
+    handleGetFeedbacks()
+  }, [categoryFilter, feedbackFilter])
+
+  function handleGetFeedbacks(){
     if (categoryFilter === "All") {
       getFeedback().then((items) => {
         handleFeedbacks(items)
@@ -48,8 +52,7 @@ function App() {
         handleFeedbacks(items)  
       })
     }
-  
-  }, [categoryFilter, feedbackFilter])
+  }
 
   useEffect(() => {
     const arrayPlanned =  feedbacks.filter((el) => el.status === 'Planned')
@@ -73,7 +76,7 @@ function App() {
       <div className='feedbackContainer flex flex-col'>
         <NavBar suggestCount={feedbacks.length} />
         {
-          feedbacks.length === 0 ? <EmptyFeedback /> : <Feedbacks refreshPost={handleFeedbacks} feedbacks={feedbacks} />
+          feedbacks.length === 0 ? <EmptyFeedback /> : <Feedbacks refreshPost={handleGetFeedbacks} feedbacks={feedbacks} />
         }
       </div>
     </main>

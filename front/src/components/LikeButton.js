@@ -21,7 +21,7 @@ function LikeButton({feedback, refreshPost, isRow}) {
 
   return (
     <button onClick={updateLikes} className={ isRow ? `like-button-roadmap ${likeButton && 'like-button-active'}` : `like-button flex flex-col align-center ${likeButton && 'like-button-active'}`}>
-      <div className={ isRow ? 'like-button-roadmap' : ''}>
+      <div>
           <img src={ likeButton ? chevronLikeActive : chevronLike } alt="" />
       </div>
       <span>{feedback.likes}</span>
